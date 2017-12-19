@@ -1,0 +1,44 @@
+[header-background-image] {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  
+    img {
+      padding-top: 40px;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      z-index: 9;
+      max-width: 60px;
+    }
+  
+    [item-title] {
+      color: theme-colors('textColors', 'accent-first') !important;
+      position: relative;
+      z-index: 9;
+    }
+  }
+  // Settings Main  Menu
+  
+  [main-menu] {
+    button {
+      padding-left: 30px;
+    }
+  
+  
+    .item-inner {
+      margin-left: 0 !important;
+    }
+  
+    [icon-small] {
+      margin-top: 18px !important;
+    }
+  }
+  // Settings Submenu
+  
+  [submenu] {
+    ion-label {
+      padding-left: 30px !important;
+    }
+  }
+  
