@@ -24,6 +24,7 @@ export class RegisterPage {
   public tam_user : FormControl;
   public email_user : FormControl;
   public pass_user : FormControl;
+  public level_user : FormControl;
   public location : number;
   public imageURI:any;
   public imageFileName:any;
@@ -48,6 +49,7 @@ export class RegisterPage {
     this.tam_user = fb.control('', Validators.required);
     this.email_user = fb.control('', Validators.required);
     this.pass_user = fb.control('', Validators.required);
+    this.level_user = fb.control('', Validators.required);
     this.reportForm = fb.group({
       'name_user': this.name_user, 
       'lname_user': this.lname_user, 
@@ -56,7 +58,8 @@ export class RegisterPage {
       'amp_user': this.amp_user, 
       'tam_user': this.tam_user, 
       'email_user': this.email_user, 
-      'pass_user': this.pass_user
+      'pass_user': this.pass_user, 
+      'level_user': this.level_user
     })
   }
 
@@ -90,6 +93,7 @@ export class RegisterPage {
     let tam_user = this.reportForm.controls['tam_user'].value;
     let email_user = this.reportForm.controls['email_user'].value;
     let pass_user = this.reportForm.controls['pass_user'].value;
+    let level_user = this.reportForm.controls['level_user'].value;
     let img64 = this.imageFileName;
    
     let data = JSON.stringify({
@@ -101,6 +105,7 @@ export class RegisterPage {
       'tam_user':tam_user,
       'email_user':email_user,
       'pass_user':pass_user,
+      'level_user':level_user,
       'img64':img64
     });
 
@@ -123,6 +128,14 @@ export class RegisterPage {
 		      let alert=this.alertCtrl.create({
 		        title: 'ลงทะเบียนเสร็จสิ้น',
 		        subTitle: 'ท่านสามารถ Log in เข้าใช้งานระบบได้ทันที',
+		        buttons:['ok']
+		      });
+		      alert.present();     
+    	}else if(res.message == 'error-other'){
+    		 loader.dismiss();     
+		      let alert=this.alertCtrl.create({
+		        title: 'ไม่สามารถบันทึกข้อมูลได้',
+		        subTitle: 'กรุณาลองอีกครั้ง',
 		        buttons:['ok']
 		      });
 		      alert.present();     

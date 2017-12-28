@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController} from 'ionic-angular';
+import {Camera, CameraOptions} from '@ionic-native/camera';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 
 import { RegisterPage } from '../register/register';
@@ -19,19 +22,92 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WelcomePage');
-  }
-
-  login(){
-  	this.navCtrl.push(TabsPage);
-  }
+  }  
 
   signup(){
-  	this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(RegisterPage);
   }
+
+
+  public reportForm : FormGroup;
+  public email_user : FormControl;
+  public pass_user : FormControl;
+
+
+
+  constructor(
+    public fb : FormBuilder,  
+    private camera : Camera, 
+    private navCtrl : NavController, 
+    private navParams : NavParams, 
+    private loadingCtrl : LoadingController,
+    private alertCtrl: AlertController,
+    public toastCtrl: ToastController,
+    public http: HttpClient){
+
+    this.email_user = fb.control('', Validators.required);
+    this.pass_user = fb.control('', Validators.required);
+    this.reportForm = fb.group({
+      'email_user': this.email_user, 
+      'pass_user': this.pass_user
+    })
+  }
+
+  submit() {
+    let loader = this.loadingCtrl.create({content: "กำลังเข้าสู่ระบบ.."});  
+    let email_user = this.reportForm.controls['email_user'].value;
+    let pass_user = this.reportForm.controls['pass_user'].value;
+   
+    let data = JSON.stringify({
+      'email_user':email_user,
+      'pass_user':pass_user
+    });
+
+    loader.present();    
+    this.http.post('http://localhost/isnre/php_app/checklogin.php', data)
+    .subscribe(res => {
+      console.log(res);
+      
+      if (res.message == 'error') {
+         loader.dismiss();      
+          let alert=this.alertCtrl.create({
+            title: 'กรุณาสมัครสมาชิกก่อนใช้งาน!',
+            subTitle: '',
+            buttons:['ok']
+          });
+          alert.present();     
+      }else if(res.message == 'success'){
+         loader.dismiss(); 
+          this.gotoindex();      
+          let alert=this.alertCtrl.create({
+            title: 'E-Mail และรหัสผ่านถูกต้อง',
+            subTitle: 'กำลังเข้าสู่ระบบ',
+            buttons:['ok']
+          });
+          // alert.present();     
+      }
+
+
+      
+      //this.presentToast("Image uploaded successfully");
+    }, error => {
+      console.log("Oooops!");
+      loader.dismiss();
+    });
+
+  
+
+
+  }  
+
+  gotoindex(){
+    this.navCtrl.push(TabsPage);
+  }
+
+
 
 }

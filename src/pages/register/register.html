@@ -45,6 +45,14 @@
                     </ion-item>
 
                  
+                    <ion-item  no-padding>
+                      <ion-label floating>สิทธิ์การใช้งาน</ion-label>
+                      <ion-select formControlName="level_user">
+                        <ion-option value="operational" >ระดับปฏิบัติการ</ion-option>
+                        <ion-option value="analytical">ระดับวิเคราะห์</ion-option>
+                        <ion-option value="executive">ระดับบริหาร</ion-option>
+                      </ion-select>
+                    </ion-item>
 
                     <!---Input field email-->
                     <ion-item no-padding>
@@ -56,26 +64,9 @@
                         <ion-input required type="password" formControlName="pass_user"  ></ion-input>
                     </ion-item>
 
-                    <!-- <ion-list radio-group>
-                      <ion-list-header>
-                        <h2>เลือกระดับผู้ใช้งาน</h2>
-                      </ion-list-header>
 
-                      <ion-item no-padding>
-                        <ion-label ><small>ระดับปฏิบัติการ</small></ion-label>
-                        <ion-radio checked="true" value="operational" formControlName="level_user1"></ion-radio>
-                      </ion-item>
+                   
 
-                      <ion-item no-padding>
-                        <ion-label ><small>ระดับวิเคราะห์</small></ion-label>
-                        <ion-radio value="analytical" formControlName="level_user2"></ion-radio>
-                      </ion-item>
-
-                      <ion-item no-padding>
-                        <ion-label ><small>ระดับบริหาร</small> </ion-label>
-                        <ion-radio value="executive"  formControlName="level_user3"></ion-radio>
-                      </ion-item>
-                    </ion-list> -->
                        <button ion-button block icon-left (click)="takePicture()">
                           <ion-icon ios="ios-camera" md="md-camera"></ion-icon> ถ่ายภาพ
                         </button>
