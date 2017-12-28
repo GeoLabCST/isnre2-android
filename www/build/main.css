@@ -52936,7 +52936,7 @@ page-map #map {
 }
 
 page-register [default-background] {
-  background-image: url("");
+  background-image: url("http://119.59.125.189/images_isnre/bg003.jpg");
   background-color: white;
   background-blend-mode: luminosity;
 }
@@ -52987,7 +52987,7 @@ page-register [logo] [button-clear] {
 }
 
 page-welcome [default-background] {
-  background-image: url("");
+  background-image: url("http://119.59.125.189/images_isnre/bg004.jpg");
   background-color: white;
   background-blend-mode: luminosity;
 }

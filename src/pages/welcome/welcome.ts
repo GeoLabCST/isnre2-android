@@ -75,8 +75,8 @@ export class WelcomePage {
       if (res.message == 'error') {
          loader.dismiss();      
           let alert=this.alertCtrl.create({
-            title: 'กรุณาสมัครสมาชิกก่อนใช้งาน!',
-            subTitle: '',
+            title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
+            subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
             buttons:['ok']
           });
           alert.present();     
