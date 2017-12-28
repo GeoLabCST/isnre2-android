@@ -32,17 +32,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     ContactPage,
-<<<<<<< HEAD
     LoginPage,
     RegisterPage,
-    WelcomePage
-=======
+    WelcomePage,
     AmphoePage,
     TambonPage,
     LayersPage,
     LocationPage,
     MapPage
->>>>>>> origin/master
   ],
   imports: [
     BrowserModule,
@@ -57,17 +54,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     ContactPage,
-<<<<<<< HEAD
     LoginPage,
     RegisterPage,
-    WelcomePage
-=======
+    WelcomePage,
     AmphoePage,
     TambonPage,
     LayersPage,
     LocationPage,
     MapPage
->>>>>>> origin/master
   ],
   providers: [
     StatusBar,

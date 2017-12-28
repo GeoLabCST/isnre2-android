@@ -7,7 +7,7 @@
 
 </ion-header>
 <!-- Themes Register + logo -->
-<ion-content  background-size default-background>
+<ion-content  background-size default-background  id="isnre-font">
         <ion-row wrap padding>
             <ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 <!--Form-->
@@ -23,11 +23,6 @@
                     <ion-item no-padding>
                         <ion-label floating>นามสกุล</ion-label>
                         <ion-input required type="text"></ion-input>
-                    </ion-item>
-                    <!---Input field email-->
-                    <ion-item no-padding>
-                        <ion-label floating>email</ion-label>
-                        <ion-input required type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required></ion-input>
                     </ion-item>
                     <!---Input field country-->
                     <ion-item no-padding>
@@ -47,9 +42,10 @@
                         <ion-label floating>ตำบล</ion-label>
                         <ion-input required type="text"  required></ion-input>
                     </ion-item>
+                    <!---Input field email-->
                     <ion-item no-padding>
-                        <ion-label floating>ชื่อผู้ใช้งาน</ion-label>
-                        <ion-input required type="text"  required></ion-input>
+                        <ion-label floating>email</ion-label>
+                        <ion-input required type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required></ion-input>
                     </ion-item>
                     <ion-item no-padding>
                         <ion-label floating>รหัสผ่าน</ion-label>
