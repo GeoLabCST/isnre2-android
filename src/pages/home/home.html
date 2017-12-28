@@ -1,24 +1,19 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <!-- <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button>
+    </button> -->
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="isnre-font">
-  เลือกจังหวัด
-    <ion-item-group>
-        <ion-list>
-            <button ion-item (click)="allSelected('all')">
-              เลือกทุกจังหวัด
-            </button>
-          </ion-list>
-      <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-          {{ item.prov_namt }}
-        </button>
-      </ion-list>
-    </ion-item-group>
+<ion-content id="isnre-font">
+    <ion-fab right bottom>
+        <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab (click)="addMeasure()"><ion-icon name="git-pull-request"></ion-icon></button>
+          <button ion-fab (click)="gotoLocation()"><ion-icon name="search"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+    <div id="map1"></div>
 </ion-content>

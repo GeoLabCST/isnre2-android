@@ -11,9 +11,6 @@ import { OtherPage } from '../pages/other/other';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
-import { AmphoePage } from '../pages/amphoe/amphoe';
-import { TambonPage } from '../pages/tambon/tambon';
-import { LayersPage } from '../pages/layers/layers';
 import { LocationPage } from '../pages/location/location'
 
 import { MapPage } from '../pages/map/map';
@@ -29,9 +26,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     ContactPage,
-    AmphoePage,
-    TambonPage,
-    LayersPage,
     LocationPage,
     MapPage
   ],
@@ -48,9 +42,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     ContactPage,
-    AmphoePage,
-    TambonPage,
-    LayersPage,
     LocationPage,
     MapPage
   ],

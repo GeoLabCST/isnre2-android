@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { AmphoePage } from '../amphoe/amphoe';
 
-import { LayersPage } from '../layers/layers';
+import L from 'leaflet';
+import 'leaflet-measure/dist/leaflet-measure';
+
+import { LocationPage } from '../location/location';
 
 @Component({
   selector: 'page-home',
@@ -11,44 +13,65 @@ import { LayersPage } from '../layers/layers';
 })
 export class HomePage {
 
-  public items: any; 
-  public errorMessage:string;
+  public map : L.map;
 
   constructor(
     public navCtrl: NavController,
     public http: HttpClient
   ) {
-    this.initializeItems();
+    
   }
 
-  ionViewDidLoad(){
-    //this.loadMap();  
-  }  
- 
+  ionViewDidLoad(){  
+    this.loadMap();    
+  }   
 
-  initializeItems() {
-    this.http.get('http://119.59.125.189/service/isnre_prov.php')
-    .subscribe(res => {
-      this.items = res;
-      console.log(res);
-    }, error => {
-      console.log("Oooops!");
-    });
+  loadMap() {
+    this.map = L.map('map1', {
+      center: [13.00, 101.50],
+      zoom: 5,
+      zoomControl: false,
+      //measureControl: true,
+      //layersControl: true
+    })
+
+    const url = "http://119.59.125.189/geoserver/ows?";
+
+    let mapbox = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access' +
+        '_token=pk.eyJ1IjoicGF0cmlja3IiLCJhIjoiY2l2aW9lcXlvMDFqdTJvbGI2eXUwc2VjYSJ9.trTzs' +
+        'dDXD2lMJpTfCVsVuA')
+      .addTo(this.map);
+
+    let pro = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+        layers: 'isnre:c02_province',
+        format: 'image/png',
+        transparent: true
+      }); 
+     
+    // let baseLayers = {   
+    //   "Mapbox": mapbox
+    // }; 
+    
+    // let overlays = {
+    //   "ขอบเขตจังหวัด": pro.addTo(this.map)
+    // }; 
+   //L.control.layers(baseLayers, overlays).addTo(this.map);
+
+  }   
+
+  addMeasure(){
+    let options = { position: 'topright' }
+    L.control.measure(options).addTo(this.map);
   }
 
-  allSelected(item: string) {
-    //console.log("Selected Item", item);
-    this.navCtrl.push(LayersPage, {
-      dat: 'all'
+
+  gotoLocation(){
+    this.navCtrl.setRoot(LocationPage, {
+      //location: this.pos
     })
   }
 
-  itemSelected(item: string) {
-    //console.log("Selected Item", item);
-    this.navCtrl.push(AmphoePage, {
-      dat: item
-    })
 
-  }
+
 
 }
