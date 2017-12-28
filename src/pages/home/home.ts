@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Geolocation } from '@ionic-native/geolocation';
-import L from 'leaflet';
+import { HttpClient } from '@angular/common/http';
+import { AmphoePage } from '../amphoe/amphoe';
+
+import { LayersPage } from '../layers/layers';
 
 @Component({
   selector: 'page-home',
@@ -9,80 +11,44 @@ import L from 'leaflet';
 })
 export class HomePage {
 
-  public map: L.map;
-  public marker: L.marker; 
-  public items: string[]; 
+  public items: any; 
+  public errorMessage:string;
 
   constructor(
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public http: HttpClient
   ) {
     this.initializeItems();
   }
 
   ionViewDidLoad(){
-    this.loadMap();  
+    //this.loadMap();  
   }  
-
-  loadMap(){  
-    this.map = L.map('map',{
-      center: [13.00, 101.50],
-      zoom: 5,
-      zoomControl: false
-    })
-
-    let osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attributions: 'OSM'
-    });
-
-    let mapbox = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access' +
-        '_token=pk.eyJ1IjoicGF0cmlja3IiLCJhIjoiY2l2aW9lcXlvMDFqdTJvbGI2eXUwc2VjYSJ9.trTzs' +
-        'dDXD2lMJpTfCVsVuA').addTo(this.map);
-
-    let baseLayers = {
-      "Mapbox": mapbox,
-      "OpenStreetMap": osm
-    };
-
-    let overlays = {
-      //"hcenter": hcenter,
-      //"dengue": dengue
-    };
-    //L.control.layers(baseLayers, overlays).addTo(this.map);  
-    //this.showLocation();
-  }
+ 
 
   initializeItems() {
-      this.items = [
-      'บึงกาฬ',
-      'บุรีรัมย์',
-      'ขอนแก่น',
-      'กระบี่',
-      'ปทุมธานี',
-      'พัทลุง',
-      'พะเยา',
-      'พิษณุโลก',
-      'ปราจีนบุรี',
-      'ประจวบคิรีขันธ์',
-      'ราชบุรี',
-      'ระยอง',
-      'สระแก้ว',
-      'สระบุรี',
-    ]
+    this.http.get('http://119.59.125.189/service/isnre_prov.php')
+    .subscribe(res => {
+      this.items = res;
+      console.log(res);
+    }, error => {
+      console.log("Oooops!");
+    });
   }
 
-  getItems(ev) {
-    // Reset items back to all of the items
-    this.initializeItems();
+  allSelected(item: string) {
+    //console.log("Selected Item", item);
+    this.navCtrl.push(LayersPage, {
+      dat: 'all'
+    })
+  }
 
-    // set val to the value of the ev target
-    var val = ev.target.value;
+  itemSelected(item: string) {
+    //console.log("Selected Item", item);
+    this.navCtrl.push(AmphoePage, {
+      dat: item
+    })
 
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
   }
 
 }

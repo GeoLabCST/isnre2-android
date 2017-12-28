@@ -7,8 +7,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <div id="map"></div>
-
-  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
+<ion-content padding id="isnre-font">
+  เลือกจังหวัด
+    <ion-item-group>
+        <ion-list>
+            <button ion-item (click)="allSelected('all')">
+              เลือกทุกจังหวัด
+            </button>
+          </ion-list>
+      <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          {{ item.prov_namt }}
+        </button>
+      </ion-list>
+    </ion-item-group>
 </ion-content>
