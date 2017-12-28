@@ -29,7 +29,6 @@ export class LayersPage {
   initializeItems(ampcode: string) {
     this.http.get('http://119.59.125.189/service/isnre_lyr.php')
     .subscribe(res => {
-      this.items = res;
       console.log(res);
     }, error => {
       console.log("Oooops!");

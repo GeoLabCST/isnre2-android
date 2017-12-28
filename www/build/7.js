@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 282:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21,18 +21,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var LayersPageModule = (function () {
     function LayersPageModule() {
     }
+    LayersPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__layers__["a" /* LayersPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__layers__["a" /* LayersPage */]),
+            ],
+        })
+    ], LayersPageModule);
     return LayersPageModule;
 }());
-LayersPageModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__layers__["a" /* LayersPage */],
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__layers__["a" /* LayersPage */]),
-        ],
-    })
-], LayersPageModule);
 
 //# sourceMappingURL=layers.module.js.map
 
