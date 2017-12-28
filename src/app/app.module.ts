@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +14,13 @@ import { OtherPage } from '../pages/other/other';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
+import { AmphoePage } from '../pages/amphoe/amphoe';
+import { TambonPage } from '../pages/tambon/tambon';
+import { LayersPage } from '../pages/layers/layers';
+import { LocationPage } from '../pages/location/location'
+
+import { MapPage } from '../pages/map/map';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -24,13 +32,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     ContactPage,
+<<<<<<< HEAD
     LoginPage,
     RegisterPage,
     WelcomePage
+=======
+    AmphoePage,
+    TambonPage,
+    LayersPage,
+    LocationPage,
+    MapPage
+>>>>>>> origin/master
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,9 +57,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     ContactPage,
+<<<<<<< HEAD
     LoginPage,
     RegisterPage,
     WelcomePage
+=======
+    AmphoePage,
+    TambonPage,
+    LayersPage,
+    LocationPage,
+    MapPage
+>>>>>>> origin/master
   ],
   providers: [
     StatusBar,
