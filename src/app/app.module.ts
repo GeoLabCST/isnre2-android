@@ -35,15 +35,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HomePage,
     AboutPage,
     ContactPage,
-<<<<<<< HEAD
-=======
     LoginPage,
     RegisterPage,
     WelcomePage,
-    AmphoePage,
-    TambonPage,
-    LayersPage,
->>>>>>> origin/master
     LocationPage,
     MapPage
   ],
@@ -60,15 +54,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HomePage,
     AboutPage,
     ContactPage,
-<<<<<<< HEAD
-=======
     LoginPage,
     RegisterPage,
     WelcomePage,
-    AmphoePage,
-    TambonPage,
-    LayersPage,
->>>>>>> origin/master
     LocationPage,
     MapPage
   ],
