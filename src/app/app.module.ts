@@ -12,6 +12,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
  
+import { Formula_1Page } from '../pages/formula-1/formula-1';
+import { Formula_2Page } from '../pages/formula-2/formula-2';
+import { Formula_3Page } from '../pages/formula-3/formula-3';
+import { Formula_4Page } from '../pages/formula-4/formula-4';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
@@ -39,7 +43,11 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     RegisterPage,
     WelcomePage,
     LocationPage,
-    MapPage
+    MapPage,
+    Formula_1Page,
+    Formula_2Page,
+    Formula_3Page,
+    Formula_4Page
   ],
   imports: [
     BrowserModule,
@@ -58,7 +66,11 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     RegisterPage,
     WelcomePage,
     LocationPage,
-    MapPage
+    MapPage,
+    Formula_1Page,
+    Formula_2Page,
+    Formula_3Page,
+    Formula_4Page
   ],
   providers: [
     StatusBar,

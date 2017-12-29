@@ -1,6 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>การนำขยะไปแปรรูป</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-title>
   </ion-navbar>
 </ion-header>
  
@@ -8,15 +11,16 @@
 	<ion-fab right bottom>
 	    <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
 	    <ion-fab-list side="top">
-	      <button ion-fab >การนำขยะไปแปรรูป</button>
+	      <button ion-fab  (click)="about1()">การนำขยะไปแปรรูป</button>
 	      <button ion-fab  (click)="Formula1()">นำขยะรีไซเคิลไปจำหน่าย</button>
-	      <button ion-fab  (click)="Formula2()">อนุรักษ์ป่าพื้นที่สีเขียวเดิม</button>
+	      <button ion-fab>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</button>
 	      <button ion-fab  (click)="Formula3()">การปลูกต้นไม้ใหม่</button>
 	      <button ion-fab  (click)="Formula4()">การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</button>
 	    </ion-fab-list>
 	  </ion-fab>
 
-    <iframe src="http://119.59.125.189/isnre2/pages/formula_app1.php" frameborder="0" width="100%" height="100%"></iframe>
+
+    <iframe src="http://119.59.125.189/isnre2/pages/formula_app3.php" frameborder="0" width="100%" height="100%"></iframe>
 
 
 
