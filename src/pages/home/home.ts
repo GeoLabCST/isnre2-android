@@ -46,7 +46,7 @@ export class HomePage {
         layers: 'isnre:c02_province',
         format: 'image/png',
         transparent: true
-      }); 
+      }).addTo(this.map); 
      
     // let baseLayers = {   
     //   "Mapbox": mapbox

@@ -21,8 +21,8 @@
 		    <ion-input type="password" formControlName="pass_user" placeholder="Password" required></ion-input>
 		  </ion-item>
 
-		</ion-list>
-		<button ion-button block color="light"  type="submit" [disabled]="!reportForm.valid" (click)="submit()">เข้าสู่ระบบ</button>
+		</ion-list> <!-- [disabled]="!reportForm.valid" -->
+		<button ion-button block color="light"  type="submit"  (click)="submit()">เข้าสู่ระบบ</button>
 		<button ion-button block class="marginTop" (click)="signup()">สมัครสมาชิก</button>
 	</div>
 </form>	

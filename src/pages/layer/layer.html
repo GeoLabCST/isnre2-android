@@ -1,0 +1,29 @@
+<!--
+  Generated template for the LayerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>layer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>ชั้นข้อมูล</ion-label>
+            <ion-select [(ngModel)]="lyr_ls" multiple="true" interface="action-sheet">
+                <ion-option *ngFor="let lyr of lyrs" [value] = "lyr.lyr">{{lyr.lyr_desc}}</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+
+      <button ion-button (click)="itemSelected()">แสดงแผนที่</button>
+
+</ion-content>

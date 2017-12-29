@@ -21,6 +21,12 @@ export class LocationPage {
   public lyr_ls:any; 
   public dat: any;
 
+  public xmin:number;
+  public ymin:number;
+  public xmax:number;
+  public ymax:number;
+  public bbox:Array<number>;
+
   public errorMessage:string;
 
   constructor(
@@ -47,20 +53,46 @@ export class LocationPage {
 
   initializeAmp(provcode: any) {
 
-    this.http.get('http://119.59.125.189/service/isnre_amp.php?prov_code='+provcode)
+    this.http.get('http://119.59.125.189/service/isnre_amp.php?procode='+provcode)
     .subscribe(res => {
       this.amps = res;
       //console.log(res);
     }, error => {
       console.log("Oooops!");
     });
+
+    this.http.get('http://119.59.125.189/service/isnre_prov.php?procode='+provcode)
+    .subscribe(res => {
+      this.bbox = [res[0].xmin, res[0].ymin, res[0].xmax, res[0].ymax];
+      //console.log(this.bbox);
+    }, error => {
+      console.log("Oooops!");
+    });
   }
 
   initializeTam(ampcode: any) {
-    this.http.get('http://119.59.125.189/service/isnre_tam.php?amp_code='+ampcode)
+    this.http.get('http://119.59.125.189/service/isnre_tam.php?ampcode='+ampcode)
     .subscribe(res => {
       this.tams = res;
       //console.log(res);
+    }, error => {
+      console.log("Oooops!");
+    });
+
+    this.http.get('http://119.59.125.189/service/isnre_amp.php?ampcode='+ampcode)
+    .subscribe(res => {
+      this.bbox = [res[0].xmin, res[0].ymin, res[0].xmax, res[0].ymax];
+      //console.log(this.bbox);
+    }, error => {
+      console.log("Oooops!");
+    });
+  }
+
+  tamEtext(tamcode: any) {
+    this.http.get('http://119.59.125.189/service/isnre_tam.php?tamcode='+tamcode)
+    .subscribe(res => {
+      this.bbox = [res[0].xmin, res[0].ymin, res[0].xmax, res[0].ymax];
+      //console.log(this.bbox);
     }, error => {
       console.log("Oooops!");
     });
@@ -81,7 +113,8 @@ export class LocationPage {
       pro: this.prov_ls,
       amp: this.amp_ls,
       tam: this.tam_ls,
-      lyr: this.lyr_ls
+      lyr: this.lyr_ls,
+      bbox: this.bbox
     }
     this.navCtrl.push(MapPage, this.dat)
   }

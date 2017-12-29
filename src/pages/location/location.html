@@ -13,7 +13,7 @@
         <ion-item>
             <ion-label>จังหวัด</ion-label>
             <ion-select [(ngModel)]="prov_ls" multiple="false" interface="action-sheet" (ngModelChange)="initializeAmp($event); initializeLyr($event)">
-                <ion-option *ngFor="let pro of pros" [value] = "pro.prov_code" >{{pro.prov_namt}}</ion-option>
+                <ion-option *ngFor="let pro of pros" [value] = "pro.procode" >{{pro.prov_namt}}</ion-option>
             </ion-select>
           </ion-item>
       </ion-list>
@@ -34,7 +34,7 @@
     <ion-list>
         <ion-item>
             <ion-label>ตำบล</ion-label>
-            <ion-select [(ngModel)]="tam_ls" multiple="false" interface="action-sheet" (ngModelChange)="initializeLyr($event)">
+            <ion-select [(ngModel)]="tam_ls" multiple="false" interface="action-sheet" (ngModelChange)="tamEtext($event); ">
                 <ion-option *ngFor="let tam of tams" [value] = "tam.tamcode">{{tam.tam_namt}}</ion-option>
             </ion-select>
           </ion-item>

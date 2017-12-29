@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
-import {HomePage} from '../home/home';
+// import {HomePage} from '../home/home';
 import {WelcomePage} from '../welcome/welcome';
 
 @IonicPage()
@@ -110,7 +110,7 @@ export class RegisterPage {
     });
 
     loader.present();    
-    this.http.post('http://localhost/isnre/php_app/insert.php', data)
+    this.http.post('http://119.59.125.189/isnre2/php_app/insert.php', data)
     .subscribe(res => {
     	
     	if (res.message == 'error-email') {
