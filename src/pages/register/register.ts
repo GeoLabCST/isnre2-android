@@ -115,7 +115,7 @@ export class RegisterPage {
     .subscribe(res => {
       this.res = res;
     	
-<<<<<<< HEAD
+
     	// if (res.message == 'error-email') {
     	// 	 loader.dismiss(); 
 		   //    this.gotoHome();      
@@ -143,7 +143,7 @@ export class RegisterPage {
 		   //    });
 		   //    alert.present();     
     	// }
-=======
+
     	if (this.res.message == 'error-email') {
     		 loader.dismiss(); 
 		      this.gotoHome();      
@@ -171,7 +171,7 @@ export class RegisterPage {
 		      });
 		      alert.present();     
     	}
->>>>>>> origin/master
+
       
       //this.presentToast("Image uploaded successfully");
     }, error => {

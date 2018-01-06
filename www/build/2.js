@@ -1,25 +1,14 @@
 webpackJsonp([2],{
 
-<<<<<<< HEAD
-/***/ 312:
-=======
 /***/ 304:
->>>>>>> origin/master
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OtherPageModule", function() { return OtherPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__other__ = __webpack_require__(218);
-=======
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddDataPageModule", function() { return AddDataPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_data__ = __webpack_require__(318);
->>>>>>> origin/master
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,25 +18,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-<<<<<<< HEAD
-var OtherPageModule = (function () {
-    function OtherPageModule() {
-    }
-    OtherPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__other__["a" /* OtherPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__other__["a" /* OtherPage */]),
-            ],
-        })
-    ], OtherPageModule);
-    return OtherPageModule;
-}());
-
-//# sourceMappingURL=other.module.js.map
-=======
 var AddDataPageModule = (function () {
     function AddDataPageModule() {
     }
@@ -76,7 +46,7 @@ var AddDataPageModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -200,7 +170,7 @@ var AddDataPage = (function () {
     };
     AddDataPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-data',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\add-data\add-data.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>add-data</ion-title>    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding id="isnre-font">\n \n    <form novalidate [formGroup]="reportForm" >\n        <ion-list>\n    \n          <ion-item>\n            <ion-label color="primary" stacked>ตำแหน่ง</ion-label>\n            <ion-input type="text" placeholder="lat: {{pos.lat}} long: {{pos.lng}}" readonly></ion-input>\n          </ion-item>\n    \n          <ion-item>\n            <ion-label color="primary" stacked>สถานที่</ion-label>\n            <ion-input type="text" formControlName="title" placeholder="กรอกชื่อสถานที่"></ion-input>\n          </ion-item>\n    \n          <ion-item>\n            <ion-label color="primary" stacked>รายละเอียด</ion-label>\n            <ion-input type="text" formControlName="descpt" placeholder="กรอกรายละเอียดเกี่ยวกับสถานที่"></ion-input>\n          </ion-item>\n    \n          <!-- <ion-item>\n            <ion-label color="primary" stacked>ชื่อ-นามสกุล</ion-label>\n            <ion-input type="email" formControlName="fname" placeholder="กรอกชื่อผู้รายงาน"></ion-input>\n          </ion-item> -->\n    \n        </ion-list>\n    \n       \n        <ion-card>\n          <img [src]="imageURI" *ngIf="imageURI" />\n        </ion-card>   \n        <button ion-button color="danger" round icon-left (click)="takePicture()">\n            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n          </button>    \n        <button ion-button type="submit" [disabled]="!reportForm.valid" (click)="submit()">ส่งข้อมูล</button>\n      </form>\n    <!-- <button ion-button (click)="closeModal()">แสดงแผนที่</button> -->\n\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\add-data\add-data.html"*/,
+            selector: 'page-add-data',template:/*ion-inline-start:"C:\app\isnre2-android\src\pages\add-data\add-data.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>add-data</ion-title>    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding id="isnre-font">\n\n \n\n    <form novalidate [formGroup]="reportForm" >\n\n        <ion-list>\n\n    \n\n          <ion-item>\n\n            <ion-label color="primary" stacked>ตำแหน่ง</ion-label>\n\n            <ion-input type="text" placeholder="lat: {{pos.lat}} long: {{pos.lng}}" readonly></ion-input>\n\n          </ion-item>\n\n    \n\n          <ion-item>\n\n            <ion-label color="primary" stacked>สถานที่</ion-label>\n\n            <ion-input type="text" formControlName="title" placeholder="กรอกชื่อสถานที่"></ion-input>\n\n          </ion-item>\n\n    \n\n          <ion-item>\n\n            <ion-label color="primary" stacked>รายละเอียด</ion-label>\n\n            <ion-input type="text" formControlName="descpt" placeholder="กรอกรายละเอียดเกี่ยวกับสถานที่"></ion-input>\n\n          </ion-item>\n\n    \n\n          <!-- <ion-item>\n\n            <ion-label color="primary" stacked>ชื่อ-นามสกุล</ion-label>\n\n            <ion-input type="email" formControlName="fname" placeholder="กรอกชื่อผู้รายงาน"></ion-input>\n\n          </ion-item> -->\n\n    \n\n        </ion-list>\n\n    \n\n       \n\n        <ion-card>\n\n          <img [src]="imageURI" *ngIf="imageURI" />\n\n        </ion-card>   \n\n        <button ion-button color="danger" round icon-left (click)="takePicture()">\n\n            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n          </button>    \n\n        <button ion-button type="submit" [disabled]="!reportForm.valid" (click)="submit()">ส่งข้อมูล</button>\n\n      </form>\n\n    <!-- <button ion-button (click)="closeModal()">แสดงแผนที่</button> -->\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\app\isnre2-android\src\pages\add-data\add-data.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer__["a" /* FileTransfer */],
             __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
@@ -216,7 +186,6 @@ var AddDataPage = (function () {
 }());
 
 //# sourceMappingURL=add-data.js.map
->>>>>>> origin/master
 
 /***/ })
 
