@@ -16,6 +16,7 @@ export class TabsPage {
   tab3Root: any = ContactPage;
   //tab4Root: any = LocationPage;
   constructor() {
+    
   }
 
   ionViewDidLoad() {

@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController} from 'ionic-angular';
 import {Camera, CameraOptions} from '@ionic-native/camera';
@@ -6,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 
 import { RegisterPage } from '../register/register';
 //import { TabsPage } from '../tabs/tabs';
-import { MapPage } from '../map/map';
+//import { MapPage } from '../map/map';
 
 @IonicPage()
 @Component({
@@ -50,10 +51,10 @@ export class WelcomePage {
     });
 
     loader.present();    
-    this.http.post('http://localhost/isnre/php_app/checklogin.php', data)
+    this.http.post('http://119.59.125.189/isnre2/php_app/checklogin.php', data)
     .subscribe(res => {
        this.res = res;
-      console.log(res);
+       console.log(res);
       
       if (this.res.message == 'error') {
          loader.dismiss();      
@@ -80,10 +81,15 @@ export class WelcomePage {
   }  
 
   gotoindex(){
-    this.navCtrl.setRoot(MapPage,{
-      usrId: this.res.id_user
+  //   this.navCtrl.push(MapPage,{
+  //     usrId: this.res.id_user
+  //   });
+    this.navCtrl.push(TabsPage{
+      res: this.res
     });
   }
+
+  
 
 
 

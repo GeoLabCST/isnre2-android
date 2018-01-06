@@ -12,6 +12,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 })
 export class AddDataPage {
   public pos: any;
+  public usId: string;
 
   public reportForm : FormGroup;
   public title : FormControl;
@@ -30,8 +31,9 @@ export class AddDataPage {
     public toastCtrl: ToastController,
     public view: ViewController,
     public http: HttpClient
-  ) {
+  ) {    
     this.pos = navParams.get('pos');
+    this.usId = navParams.get('usrId');
     this.title = fb.control('', Validators.required);
     this.descpt = fb.control('', Validators.required);
     //this.fname = fb.control('', Validators.required);
@@ -67,7 +69,6 @@ export class AddDataPage {
     let loader = this.loadingCtrl.create({content: "กำลังบันทึกข้อมูล.."});    
     let title = this.reportForm.controls['title'].value;
     let descpt = this.reportForm.controls['descpt'].value;
-    //let fname = this.reportForm.controls['fname'].value;
     let lat = this.pos.lat;
     let lon = this.pos.lng;
     let img64 = this.imageFileName;
@@ -77,7 +78,7 @@ export class AddDataPage {
       'lon':lon,
       'title':title,
       'descpt':descpt,
-      //'fname':fname,
+      'usId':this.usId,
       'img64':img64
     });
     

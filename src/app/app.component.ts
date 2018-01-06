@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { AboutPage } from '../pages/about/about';
 import { Formula_1Page } from '../pages/formula-1/formula-1';
@@ -24,13 +25,14 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    // this.pages = [
-    //   { title: 'การนำขยะไปแปรรูป', component: AboutPage },
-    //   { title: 'นำขยะรีไซเคิลไปจำหน่าย', component: Formula_1Page  },
-    //   { title: 'อนุรักษ์ป่าพื้นที่สีเขียวเดิม', component: Formula_2Page },
-    //   { title: 'การปลูกต้นไม้ใหม่', component: Formula_3Page },
-    //   { title: 'การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง', component: Formula_4Page }
-    // ];
+    this.pages = [
+      //{ title: 'Tabs Page', component: TabsPage  },
+      // { title: 'การนำขยะไปแปรรูป', component: AboutPage },
+      // { title: 'นำขยะรีไซเคิลไปจำหน่าย', component: Formula_1Page  },
+      // { title: 'อนุรักษ์ป่าพื้นที่สีเขียวเดิม', component: Formula_2Page },
+      // { title: 'การปลูกต้นไม้ใหม่', component: Formula_3Page },
+      // { title: 'การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง', component: Formula_4Page }
+    ];
 
   }
 

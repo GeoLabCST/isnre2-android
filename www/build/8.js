@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 313:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocationPageModule", function() { return LocationPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Formula_4PageModule", function() { return Formula_4PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__location__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formula_4__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LocationPageModule = (function () {
-    function LocationPageModule() {
+var Formula_4PageModule = (function () {
+    function Formula_4PageModule() {
     }
-    LocationPageModule = __decorate([
+    Formula_4PageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__location__["a" /* LocationPage */],
+                __WEBPACK_IMPORTED_MODULE_2__formula_4__["a" /* Formula_4Page */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__location__["a" /* LocationPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__formula_4__["a" /* Formula_4Page */]),
             ],
         })
-    ], LocationPageModule);
-    return LocationPageModule;
+    ], Formula_4PageModule);
+    return Formula_4PageModule;
 }());
 
-//# sourceMappingURL=location.module.js.map
+//# sourceMappingURL=formula-4.module.js.map
 
 /***/ })
 
