@@ -41,12 +41,8 @@ export class WelcomePage {
 
   constructor(
     public fb : FormBuilder,  
-    private camera : Camera, 
     private navCtrl : NavController, 
-    private navParams : NavParams, 
     private loadingCtrl : LoadingController,
-    private alertCtrl: AlertController,
-    public toastCtrl: ToastController,
     public http: HttpClient){
 
     this.email_user = fb.control('', Validators.required);
@@ -72,24 +68,24 @@ export class WelcomePage {
     .subscribe(res => {
       console.log(res);
       
-      if (res.message == 'error') {
-         loader.dismiss();      
-          let alert=this.alertCtrl.create({
-            title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
-            subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
-            buttons:['ok']
-          });
-          alert.present();     
-      }else if(res.message == 'success'){
-         loader.dismiss(); 
-          this.gotoindex();      
-          let alert=this.alertCtrl.create({
-            title: 'E-Mail และรหัสผ่านถูกต้อง',
-            subTitle: 'กำลังเข้าสู่ระบบ',
-            buttons:['ok']
-          });
-          // alert.present();     
-      }
+      // if (res.message == 'error') {
+      //    loader.dismiss();      
+      //     let alert=this.alertCtrl.create({
+      //       title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
+      //       subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
+      //       buttons:['ok']
+      //     });
+      //     alert.present();     
+      // }else if(res.message == 'success'){
+      //    loader.dismiss(); 
+      //     this.gotoindex();      
+      //     let alert=this.alertCtrl.create({
+      //       title: 'E-Mail และรหัสผ่านถูกต้อง',
+      //       subTitle: 'กำลังเข้าสู่ระบบ',
+      //       buttons:['ok']
+      //     });
+      //     // alert.present();     
+      // }
 
 
       
