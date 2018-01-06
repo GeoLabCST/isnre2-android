@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { Camera } from '@ionic-native/camera';
-
-
+import { Geolocation } from '@ionic-native/geolocation';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -52,7 +52,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule, 
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,7 +80,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     FileTransfer,
-    Camera
+    Camera,
+    Geolocation
   ]
 })
 export class AppModule {}

@@ -6,21 +6,18 @@
 
 </ion-header>
 
-
-<ion-content>
+<ion-content id="isnre-font">  
     <ion-fab right bottom>
         <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
         <ion-fab-list side="top">
-          <button ion-fab (click)="addMeasure()"><ion-icon name="git-pull-request"></ion-icon></button>
-          <button ion-fab (click)="gotoLocation()"><ion-icon name="search"></ion-icon></button>  
-          <button ion-fab (click)="gotoLayer()"><ion-icon name="albums"></ion-icon></button>          
-          <button ion-fab (click)="gotoLegend()"><ion-icon name="bowtie"></ion-icon></button>
-          <button ion-fab (click)="gotoLocation()"><ion-icon name="locate"></ion-icon></button>
-          <button ion-fab (click)="gotoLocation()"><ion-icon name="flag"></ion-icon></button>
+          <button ion-fab (click)="addSelectarea()"><ion-icon name="search"></ion-icon><ion-label>เลือกพื้นที่</ion-label></button>  
+          <button ion-fab (click)="addLayer()"><ion-icon name="albums"></ion-icon><ion-label>ชั้นข้อมูล</ion-label></button>          
+          <button ion-fab (click)="addLegend()"><ion-icon name="bowtie"></ion-icon><ion-label>สัญลักษณ์</ion-label></button>    
+          <button ion-fab (click)="addMeasure()"><ion-icon name="git-pull-request"></ion-icon><ion-label>เครื่องมือวัด</ion-label></button>             
+          <button ion-fab (click)="addLocation()"><ion-icon name="bowtie"></ion-icon><ion-label>ตำแหน่งปัจจุบัน</ion-label></button>                           
+          <button ion-fab (click)="addData()"><ion-icon name="bowtie"></ion-icon><ion-label>เพิ่มข้อมูล</ion-label></button>
+          
         </ion-fab-list>
       </ion-fab>
-
-     
-
   <div id="map"></div>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -9,27 +9,44 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LegendPage {
 
-  public lyr: any;
+  public alreadyLyr: any;
+  public alreadyTh: any;
+  public lyr_ls: any;
   public legend: Array<string>;
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams
+    public navParams: NavParams,
+    public viewCtrl: ViewController
   ) {
-    this.lyr = navParams.get('lyr');
+    this.alreadyLyr = navParams.get('alreadyLyr');
+    this.alreadyTh = navParams.get('alreadyTh');
+    //this.lyr_ls = navParams.get('lyr_ls');
   }
 
   ionViewDidLoad() {
-    console.log(this.lyr);
+    //console.log(this.lyr_ls);
+    this.loadLyr();
   }
 
-  loadLegend(){
-    const path = "http://119.59.125.189/geoserver/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=25&HEIGHT=25&LAYER=isnre:";    
-    for(let i in this.lyr){
-      this.legend.push(path+i);
-      console.log(this.legend);
+  loadLyr(){
+    const obj=[];
+    let i = 0;
+    console.log(this.alreadyTh)
+    for(let a in this.alreadyLyr){
+      obj[a]={
+        lyr: this.alreadyLyr[i],
+        lyr_th: this.alreadyTh[i]
+      }
+      i++;
     }
- 
+    this.lyr_ls=obj;
+    //console.log(obj);
   }
+
+  closeLegend(){
+    this.viewCtrl.dismiss();
+  }
+
 
 }
