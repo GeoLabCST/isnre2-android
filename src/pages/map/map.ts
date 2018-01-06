@@ -16,18 +16,16 @@ export class MapPage {
   public map : L.map;
   public control: L.control;
   public marker : L.marker;
-  public items : string[];
+  public usrId : string;
 
   public locType : string;
   public locName : string;
   public locCode : string;
   public bbox:Array<number>;
-
   public alreadyLyr = [];
   public alreadyTh = [];
   
   public lyr : string;
-
   public lyr_ls:any;
   public cql : string;
   public pos: any;
@@ -42,7 +40,8 @@ export class MapPage {
     private geolocation: Geolocation,
     private modalCtrl: ModalController,
     private alertCtrl: AlertController
-  ) {
+  ) {    
+      this.usrId = navParams.get('usrId');
       this.locType = navParams.get('locType');
       this.locName = navParams.get('locName');
       this.locCode = navParams.get('locCode'); 
@@ -200,10 +199,7 @@ export class MapPage {
         }
       }        
       L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", this.mapOtp).addTo(this.map);      
-    }
-
-
-    
+    }    
   }
     
   addMeasure(){
@@ -249,8 +245,7 @@ export class MapPage {
         console.log([e.target._latlng.lat, e.target._latlng.lng])
       });  
     })
-  }
- 
+  } 
 
   addSelectarea(){
     this.navCtrl.push(LocationPage, {});
@@ -290,7 +285,8 @@ export class MapPage {
       alert.present(); 
     }else{
       const modalAdd: Modal =  this.modalCtrl.create('AddDataPage',{
-        pos:this.marker.getLatLng()
+        pos:this.marker.getLatLng(),
+        usrId: this.usrId
       });
       modalAdd.present();
       //console.log(this.pos);

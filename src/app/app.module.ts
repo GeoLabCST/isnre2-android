@@ -9,7 +9,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
  
 import { Formula_1Page } from '../pages/formula-1/formula-1';
@@ -35,7 +34,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     TabsPage,
     OtherPage,
-    HomePage,
     AboutPage,
     ContactPage,
     RegisterPage,
@@ -59,7 +57,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     TabsPage,
     OtherPage,
-    HomePage,
     AboutPage,
     ContactPage,
     RegisterPage,

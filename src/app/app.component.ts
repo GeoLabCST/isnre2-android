@@ -24,13 +24,13 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'การนำขยะไปแปรรูป', component: AboutPage },
-      { title: 'นำขยะรีไซเคิลไปจำหน่าย', component: Formula_1Page  },
-      { title: 'อนุรักษ์ป่าพื้นที่สีเขียวเดิม', component: Formula_2Page },
-      { title: 'การปลูกต้นไม้ใหม่', component: Formula_3Page },
-      { title: 'การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง', component: Formula_4Page }
-    ];
+    // this.pages = [
+    //   { title: 'การนำขยะไปแปรรูป', component: AboutPage },
+    //   { title: 'นำขยะรีไซเคิลไปจำหน่าย', component: Formula_1Page  },
+    //   { title: 'อนุรักษ์ป่าพื้นที่สีเขียวเดิม', component: Formula_2Page },
+    //   { title: 'การปลูกต้นไม้ใหม่', component: Formula_3Page },
+    //   { title: 'การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง', component: Formula_4Page }
+    // ];
 
   }
 
