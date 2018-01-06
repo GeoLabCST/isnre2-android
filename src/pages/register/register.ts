@@ -28,19 +28,20 @@ export class RegisterPage {
   public location : number;
   public imageURI:any;
   public imageFileName:any;
+  public res: any;
 
   constructor(
     private transfer: FileTransfer,
     public fb : FormBuilder,  
     private camera : Camera, 
     private navCtrl : NavController, 
-    private navParams : NavParams, 
+    //private navParams : NavParams, 
     private loadingCtrl : LoadingController,
     private alertCtrl: AlertController,
     public toastCtrl: ToastController,
     public http: HttpClient)
   {
-    this.location= navParams.get('location');
+    //this.location= navParams.get('location');
     this.name_user = fb.control('', Validators.required);
     this.lname_user = fb.control('', Validators.required);
     this.tel_user = fb.control('', Validators.required);
@@ -64,7 +65,7 @@ export class RegisterPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.location);
+    //console.log(this.location);
   }
 
   takePicture() {
@@ -112,7 +113,9 @@ export class RegisterPage {
     loader.present();    
     this.http.post('http://119.59.125.189/isnre2/php_app/insert.php', data)
     .subscribe(res => {
+      this.res = res;
     	
+<<<<<<< HEAD
     	// if (res.message == 'error-email') {
     	// 	 loader.dismiss(); 
 		   //    this.gotoHome();      
@@ -140,6 +143,35 @@ export class RegisterPage {
 		   //    });
 		   //    alert.present();     
     	// }
+=======
+    	if (this.res.message == 'error-email') {
+    		 loader.dismiss(); 
+		      this.gotoHome();      
+		      let alert=this.alertCtrl.create({
+		        title: 'ไม่สามารถบันทึกได้!',
+		        subTitle: 'E-Mail ของท่านเคยมีการสมัครสมาชิกแล้ว กรุณาเข้าสู่ระบบ',
+		        buttons:['ok']
+		      });
+		      alert.present();     
+    	}else if(this.res.message == 'success'){
+    		 loader.dismiss(); 
+		      this.gotoHome();      
+		      let alert=this.alertCtrl.create({
+		        title: 'ลงทะเบียนเสร็จสิ้น',
+		        subTitle: 'ท่านสามารถ Log in เข้าใช้งานระบบได้ทันที',
+		        buttons:['ok']
+		      });
+		      alert.present();     
+    	}else if(this.res.message == 'error-other'){
+    		 loader.dismiss();     
+		      let alert=this.alertCtrl.create({
+		        title: 'ไม่สามารถบันทึกข้อมูลได้',
+		        subTitle: 'กรุณาลองอีกครั้ง',
+		        buttons:['ok']
+		      });
+		      alert.present();     
+    	}
+>>>>>>> origin/master
       
       //this.presentToast("Image uploaded successfully");
     }, error => {

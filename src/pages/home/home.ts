@@ -6,6 +6,7 @@ import L from 'leaflet';
 import 'leaflet-measure/dist/leaflet-measure';
 
 import { LocationPage } from '../location/location';
+import { MapPage } from '../map/map';
 
 @Component({
   selector: 'page-home',
