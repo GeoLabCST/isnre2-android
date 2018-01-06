@@ -52925,6 +52925,106 @@ ion-navbar.toolbar {
   font-family: 'Kanit-Light' !important;
 }
 
+page-about .fab {
+  contain: layout;
+}
+
+page-about button[ion-fab] {
+  overflow: visible;
+  position: relative;
+}
+
+page-about button[ion-fab] ion-label {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+page-formula-1 .fab {
+  contain: layout;
+}
+
+page-formula-1 button[ion-fab] {
+  overflow: visible;
+  position: relative;
+}
+
+page-formula-1 button[ion-fab] ion-label {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+page-formula-2 .fab {
+  contain: layout;
+}
+
+page-formula-2 button[ion-fab] {
+  overflow: visible;
+  position: relative;
+}
+
+page-formula-2 button[ion-fab] ion-label {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+page-formula-3 .fab {
+  contain: layout;
+}
+
+page-formula-3 button[ion-fab] {
+  overflow: visible;
+  position: relative;
+}
+
+page-formula-3 button[ion-fab] ion-label {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+page-formula-4 .fab {
+  contain: layout;
+}
+
+page-formula-4 button[ion-fab] {
+  overflow: visible;
+  position: relative;
+}
+
+page-formula-4 button[ion-fab] ion-label {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 page-home #map1 {
   width: 100%;
   height: 100%;

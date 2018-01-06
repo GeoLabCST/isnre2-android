@@ -173,7 +173,6 @@ export class RegisterPage {
     	}
 
       
-      //this.presentToast("Image uploaded successfully");
     }, error => {
       console.log("Oooops!");
       loader.dismiss();
@@ -188,8 +187,12 @@ export class RegisterPage {
       mimeType: "image/jpeg",
       headers: {}
     }
+
+
+
+
   
-    fileTransfer.upload(this.imageURI, 'https://www.gistnu.com/service/fixup_upload.php', options)
+    fileTransfer.upload(this.imageURI, 'http://119.59.125.189/service/isnre_upload.php', options)
     .then(res => {   
       loader.dismiss(); 
       this.gotoHome();      
@@ -205,6 +208,10 @@ export class RegisterPage {
       this.presentToast(err);
     });
   }  
+
+
+
+
   
   presentToast(msg) {
       let toast = this.toastCtrl.create({

@@ -36,6 +36,7 @@ export class WelcomePage {
   public reportForm : FormGroup;
   public email_user : FormControl;
   public pass_user : FormControl;
+  public res: any;
 
 
 
@@ -43,6 +44,7 @@ export class WelcomePage {
     public fb : FormBuilder,  
     private navCtrl : NavController, 
     private loadingCtrl : LoadingController,
+    private alertCtrl : AlertController,
     public http: HttpClient){
 
     this.email_user = fb.control('', Validators.required);
@@ -66,30 +68,30 @@ export class WelcomePage {
     loader.present();    
     this.http.post('http://119.59.125.189/isnre2/php_app/checklogin.php', data)
     .subscribe(res => {
+       this.res = res;
       console.log(res);
       
-      // if (res.message == 'error') {
-      //    loader.dismiss();      
-      //     let alert=this.alertCtrl.create({
-      //       title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
-      //       subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
-      //       buttons:['ok']
-      //     });
-      //     alert.present();     
-      // }else if(res.message == 'success'){
-      //    loader.dismiss(); 
-      //     this.gotoindex();      
-      //     let alert=this.alertCtrl.create({
-      //       title: 'E-Mail และรหัสผ่านถูกต้อง',
-      //       subTitle: 'กำลังเข้าสู่ระบบ',
-      //       buttons:['ok']
-      //     });
-      //     // alert.present();     
-      // }
+      if (this.res.message == 'error') {
+         loader.dismiss();      
+          let alert=this.alertCtrl.create({
+            title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
+            subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
+            buttons:['ok']
+          });
+          alert.present();     
+      }else if(this.res.message == 'success'){
+         loader.dismiss(); 
+          this.gotoindex();      
+          let alert=this.alertCtrl.create({
+            title: 'E-Mail และรหัสผ่านถูกต้อง',
+            subTitle: 'กำลังเข้าสู่ระบบ',
+            buttons:['ok']
+          });
+          // alert.present();     
+      }
 
 
       
-      //this.presentToast("Image uploaded successfully");
     }, error => {
       console.log("Oooops!");
       loader.dismiss();
