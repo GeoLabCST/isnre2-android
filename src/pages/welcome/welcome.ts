@@ -66,7 +66,7 @@ export class WelcomePage {
     });
 
     loader.present();    
-    this.http.post('http://119.59.125.189/isnre2/php_app/checklogin.php', data)
+    this.http.post('http://localhost/isnre/php_app/checklogin.php', data)
     .subscribe(res => {
        this.res = res;
       console.log(res);

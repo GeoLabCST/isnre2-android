@@ -1713,10 +1713,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var WelcomePage = (function () {
-    function WelcomePage(fb, navCtrl, loadingCtrl, http) {
+    function WelcomePage(fb, navCtrl, loadingCtrl, alertCtrl, http) {
         this.fb = fb;
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
         this.http = http;
         this.email_user = fb.control('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required);
         this.pass_user = fb.control('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required);
@@ -1732,6 +1733,7 @@ var WelcomePage = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__register_register__["a" /* RegisterPage */]);
     };
     WelcomePage.prototype.submit = function () {
+        var _this = this;
         var loader = this.loadingCtrl.create({ content: "กำลังเข้าสู่ระบบ.." });
         var email_user = this.reportForm.controls['email_user'].value;
         var pass_user = this.reportForm.controls['pass_user'].value;
@@ -1740,28 +1742,29 @@ var WelcomePage = (function () {
             'pass_user': pass_user
         });
         loader.present();
-        this.http.post('http://119.59.125.189/isnre2/php_app/checklogin.php', data)
+        this.http.post('http://localhost/isnre/php_app/checklogin.php', data)
             .subscribe(function (res) {
+            _this.res = res;
             console.log(res);
-            // if (res.message == 'error') {
-            //    loader.dismiss();      
-            //     let alert=this.alertCtrl.create({
-            //       title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
-            //       subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
-            //       buttons:['ok']
-            //     });
-            //     alert.present();     
-            // }else if(res.message == 'success'){
-            //    loader.dismiss(); 
-            //     this.gotoindex();      
-            //     let alert=this.alertCtrl.create({
-            //       title: 'E-Mail และรหัสผ่านถูกต้อง',
-            //       subTitle: 'กำลังเข้าสู่ระบบ',
-            //       buttons:['ok']
-            //     });
-            //     // alert.present();     
-            // }
-            //this.presentToast("Image uploaded successfully");
+            if (_this.res.message == 'error') {
+                loader.dismiss();
+                var alert = _this.alertCtrl.create({
+                    title: 'E-Mail หรือรหัสผ่านของท่านไม่ถูกต้อง!',
+                    subTitle: 'กรุณาลองอีกครั้ง หรือสมัครสมาชิกใหม่',
+                    buttons: ['ok']
+                });
+                alert.present();
+            }
+            else if (_this.res.message == 'success') {
+                loader.dismiss();
+                _this.gotoindex();
+                var alert = _this.alertCtrl.create({
+                    title: 'E-Mail และรหัสผ่านถูกต้อง',
+                    subTitle: 'กำลังเข้าสู่ระบบ',
+                    buttons: ['ok']
+                });
+                // alert.present();     
+            }
         }, function (error) {
             console.log("Oooops!");
             loader.dismiss();
@@ -1772,14 +1775,12 @@ var WelcomePage = (function () {
     };
     WelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-welcome',template:/*ion-inline-start:"C:\app\isnre2-android\src\pages\welcome\welcome.html"*/'<!--\n\n  Generated template for the WelcomePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-content padding id="welcome" default-background  id="isnre-font">\n\n	<br>\n\n	<h1 text-center><img  class="marginTop" src="../../assets/imgs/logo2.png" alt="" width="80%"></h1>\n\n	<br>\n\n	\n\n<form novalidate [formGroup]="reportForm" >\n\n	<div class="form">\n\n		<ion-list>\n\n		  <ion-item>\n\n		    <ion-input type="email" formControlName="email_user" placeholder="Username" required></ion-input>\n\n		  </ion-item>\n\n\n\n		  <ion-item>\n\n		    <ion-input type="password" formControlName="pass_user" placeholder="Password" required></ion-input>\n\n		  </ion-item>\n\n\n\n		</ion-list> <!-- [disabled]="!reportForm.valid" -->\n\n		<button ion-button block color="light"  type="submit"  (click)="gotoindex()">เข้าสู่ระบบ</button>\n\n		<button ion-button block class="marginTop" (click)="signup()">สมัครสมาชิก</button>\n\n	</div>\n\n</form>	\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\app\isnre2-android\src\pages\welcome\welcome.html"*/,
+            selector: 'page-welcome',template:/*ion-inline-start:"C:\app\isnre2-android\src\pages\welcome\welcome.html"*/'<!--\n\n  Generated template for the WelcomePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-content padding id="welcome" default-background  id="isnre-font">\n\n	<br>\n\n	<h1 text-center><img  class="marginTop" src="../../assets/imgs/logo2.png" alt="" width="80%"></h1>\n\n	<br>\n\n	\n\n<form novalidate [formGroup]="reportForm" >\n\n	<div class="form">\n\n		<ion-list>\n\n		  <ion-item>\n\n		    <ion-input type="email" formControlName="email_user" placeholder="Username" required></ion-input>\n\n		  </ion-item>\n\n\n\n		  <ion-item>\n\n		    <ion-input type="password" formControlName="pass_user" placeholder="Password" required></ion-input>\n\n		  </ion-item>\n\n\n\n		</ion-list> <!-- [disabled]="!reportForm.valid" -->\n\n		<button ion-button block color="light"  type="submit"  (click)="submit()">เข้าสู่ระบบ</button>\n\n		<button ion-button block class="marginTop" (click)="signup()">สมัครสมาชิก</button>\n\n	</div>\n\n</form>	\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\app\isnre2-android\src\pages\welcome\welcome.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _e || Object])
     ], WelcomePage);
     return WelcomePage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=welcome.js.map
