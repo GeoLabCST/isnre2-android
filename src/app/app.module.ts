@@ -18,7 +18,6 @@ import { Formula_3Page } from '../pages/formula-3/formula-3';
 import { Formula_4Page } from '../pages/formula-4/formula-4';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
-import { LoginPage } from '../pages/login/login';
 import { OtherPage } from '../pages/other/other';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -39,7 +38,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HomePage,
     AboutPage,
     ContactPage,
-    LoginPage,
     RegisterPage,
     WelcomePage,
     LocationPage,
@@ -64,7 +62,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     HomePage,
     AboutPage,
     ContactPage,
-    LoginPage,
     RegisterPage,
     WelcomePage,
     LocationPage,

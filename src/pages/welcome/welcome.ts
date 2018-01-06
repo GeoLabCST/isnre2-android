@@ -4,16 +4,9 @@ import {Camera, CameraOptions} from '@ionic-native/camera';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 
-
 import { RegisterPage } from '../register/register';
-import { TabsPage } from '../tabs/tabs';
-
-/**
- * Generated class for the WelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//import { TabsPage } from '../tabs/tabs';
+import { MapPage } from '../map/map';
 
 @IonicPage()
 @Component({
@@ -22,23 +15,10 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class WelcomePage {
 
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
-  }  
-
-  signup(){
-    this.navCtrl.push(RegisterPage);
-  }
-
-
   public reportForm : FormGroup;
   public email_user : FormControl;
   public pass_user : FormControl;
   public res: any;
-
-
 
   constructor(
     public fb : FormBuilder,  
@@ -53,6 +33,10 @@ export class WelcomePage {
       'email_user': this.email_user, 
       'pass_user': this.pass_user
     })
+  }
+
+  signup(){
+    this.navCtrl.push(RegisterPage);
   }
 
   submit() {
@@ -88,22 +72,17 @@ export class WelcomePage {
             buttons:['ok']
           });
           // alert.present();     
-      }
-
-
-      
+      }      
     }, error => {
       console.log("Oooops!");
       loader.dismiss();
     });
-
-  
-
-
   }  
 
   gotoindex(){
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.setRoot(MapPage,{
+      usrId: this.res.id_user
+    });
   }
 
 
