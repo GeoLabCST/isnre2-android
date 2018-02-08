@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <h3>{{item.lyr}}:</h3>
+      <p>{{item.desc}}</p>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="closeLegend()">กลับหน้าแผนที่</button>
+</ion-content>

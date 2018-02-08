@@ -1,0 +1,16 @@
+page-forget {
+  [default-background] {
+    background-image: url("http://119.59.125.189/images_isnre/bg004.jpg");
+    @include darkening-blend-mode;
+  }
+  #isnre-font {
+    font-family: 'Kanit' !important;
+    color: floralwhite;
+  }
+  #welcome {
+    h1 {
+      font-size: 32px;
+      margin-top: 80px;
+    }
+  }
+}

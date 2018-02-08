@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar id="isnre-font">
+    <ion-title>พื้นที่ป่า</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content id="isnre-font">
+  <ion-card id="chart" block></ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>เลือกประเภทป่า</ion-label>
+        <ion-select [(ngModel)]="type_ls" multiple="false" interface="action-sheet" (ngModelChange)="selLyr($event)">
+          <ion-option *ngFor="let lyr of lyr_ls" [value]="lyr.lyr">{{lyr.lyr_desc}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>เลือกจังหวัด</ion-label>
+        <ion-select [(ngModel)]="prov_ls" multiple="false" interface="action-sheet" (ngModelChange)="initializeAmp($event)">
+          <ion-option *ngFor="let pro of pros" [value]="pro">{{pro.prov_namt}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>เลือกอำเภอ</ion-label>
+        <ion-select [(ngModel)]="amp_ls" multiple="false" interface="action-sheet" (ngModelChange)="initializeTam($event)">
+          <ion-option *ngFor="let amp of amps" [value]="amp">{{amp.amp_namt}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

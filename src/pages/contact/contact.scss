@@ -1,0 +1,8 @@
+page-contact {
+ [default-background] {    
+    background-image: url("http://119.59.125.189/images_isnre/bg005.jpg");
+    @include darkening-blend-mode;
+  }
+
+
+}

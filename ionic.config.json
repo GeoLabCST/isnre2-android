@@ -1,0 +1,8 @@
+{
+  "name": "We_insur",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
