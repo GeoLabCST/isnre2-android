@@ -240,7 +240,7 @@ export class MapPage {
   }
 
   addLocation(){
-    this.geolocation.getCurrentPosition().then((res) => {   
+    this.geolocation.getCurrentPosition({enableHighAccuracy: true}).then((res) => {   
       this.pos=[res.coords.latitude, res.coords.longitude];
       this.map.setView(this.pos, 16);
       this.marker = L.marker(this.pos, {draggable: true}).addTo(this.map).bindPopup("ตำแหน่งของคุณ").openPopup();
