@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 308:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -104,7 +104,7 @@ var InfoPage = (function () {
     };
     InfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-info',template:/*ion-inline-start:"/Users/geolab/workspace/isnre2-android/src/pages/info/info.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>info</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let item of items">\n      <h3>{{item.lyr}}:</h3>\n      <p>{{item.desc}}</p>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button (click)="closeLegend()">กลับหน้าแผนที่</button>\n</ion-content>\n'/*ion-inline-end:"/Users/geolab/workspace/isnre2-android/src/pages/info/info.html"*/,
+            selector: 'page-info',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\info\info.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>info</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let item of items">\n      <h3>{{item.lyr}}:</h3>\n      <p>{{item.desc}}</p>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button (click)="closeLegend()">กลับหน้าแผนที่</button>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\info\info.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],

@@ -79,31 +79,31 @@
   },
   "installed_plugins": {
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.map.geolab"
+      "PACKAGE_NAME": "com.geolab.isnre"
     }
   },
   "dependent_plugins": {},

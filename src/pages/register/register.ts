@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController} from 'ionic-angular';
+import {IonicPage, NavController, LoadingController, ToastController, AlertController} from 'ionic-angular';
 import {Camera, CameraOptions} from '@ionic-native/camera';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';

@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 309:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayerPageModule", function() { return LayerPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layer__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layer__ = __webpack_require__(320);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var LayerPageModule = (function () {
 
 /***/ }),
 
-/***/ 319:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -514,7 +514,7 @@ var LayerPage = (function () {
     };
     LayerPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-layer',template:/*ion-inline-start:"/Users/geolab/workspace/isnre2-android/src/pages/layer/layer.html"*/'<ion-header id="isnre-font">\n\n  <ion-navbar>\n    <ion-title>ชั้นข้อมูล</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content id="isnre-font">\n  <h4>เลือกชั้นข้อมูล</h4>\n  <ion-scroll scrollX="true" scrollY="true" class="data">\n    <ion-list>\n      <ion-item *ngFor="let lyr of lyrs; let i = index">\n        <ion-label>{{lyr.lyr_desc}}</ion-label>\n        <ion-checkbox [(ngModel)]="lyr.checked[0]" (ionChange)="onChange(lyr.lyr,lyr.lyr_desc,$event.checked, i)" value="lyr.lyr"></ion-checkbox>\n      </ion-item>\n    </ion-list>\n  </ion-scroll>\n  <p></p>\n  <div padding>\n    <button ion-button (click)="lyrSelected()">กลับหน้าแผนที่</button>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/geolab/workspace/isnre2-android/src/pages/layer/layer.html"*/,
+            selector: 'page-layer',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\layer\layer.html"*/'<ion-header id="isnre-font">\n\n\n\n  <ion-navbar>\n\n    <ion-title>ชั้นข้อมูล</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content id="isnre-font">\n\n  <h4>เลือกชั้นข้อมูล</h4>\n\n  <ion-scroll scrollX="true" scrollY="true" class="data">\n\n    <ion-list>\n\n      <ion-item *ngFor="let lyr of lyrs; let i = index">\n\n        <ion-label>{{lyr.lyr_desc}}</ion-label>\n\n        <ion-checkbox [(ngModel)]="lyr.checked[0]" (ionChange)="onChange(lyr.lyr,lyr.lyr_desc,$event.checked, i)" value="lyr.lyr"></ion-checkbox>\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-scroll>\n\n  <p></p>\n\n  <div padding>\n\n    <button ion-button (click)="lyrSelected()">กลับหน้าแผนที่</button>\n\n  </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\layer\layer.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */],

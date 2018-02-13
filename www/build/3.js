@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 303:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70,7 +70,7 @@ var ForgetPage = (function () {
     };
     ForgetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-forget',template:/*ion-inline-start:"/Users/geolab/workspace/isnre2-android/src/pages/forget/forget.html"*/'<!--\n  Generated template for the ForgetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<!-- <ion-header>\n\n  <ion-navbar>\n    <ion-title>forget</ion-title>\n  </ion-navbar>\n\n</ion-header> -->\n\n\n<ion-content padding default-background id="isnre-font">\n    <p></p>\n    <p></p>\n    <p></p>\n    <p></p>\n    หากคุณลืมรหัสผ่านสามารถทำได้ดังนี้<p></p>\n    โปรดติดต่อผู้ดูแลระบบ<p></p>\n    ชื่อ: นายชาณวุฒิ แดงอร่าม ตำแหน่งเจ้าหน้าที่วิเคราะห์นโยบายและแผน<p></p>\n    Email: budget_ee@hotmail.com<p></p>\n    Tel.: 098-2643999<p></p>\n    คุณต้องทำอย่างไรต่อไป<p></p>\n    หลังจากคุณได้รับรหัสผ่านของคุณจากผู้ดูแลระบบแล้ว เราจะขอให้คุณลงชื่อเข้าด้วยรหัสผ่านใหม่ของคุณ ในครั้งต่อไปที่คุณเข้าใช้ระบบ ISNRE2 ของคุณ หากต้องการคุณสามารถอัพเดทที่อยู่อีเมลหรือเปลี่ยนรหัสผ่านของคุณได้\n    <p></p>\n    <div>\n      <button ion-button (click)="closeForgot()">กลับหน้า login</button>\n    </div>\n  </ion-content>\n'/*ion-inline-end:"/Users/geolab/workspace/isnre2-android/src/pages/forget/forget.html"*/,
+            selector: 'page-forget',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\forget\forget.html"*/'<ion-content padding default-background id="isnre-font">\n\n    <p></p>\n\n    <p></p>\n\n    <p></p>\n\n    <p></p>\n\n    หากคุณลืมรหัสผ่านสามารถทำได้ดังนี้<p></p>\n\n    โปรดติดต่อผู้ดูแลระบบ<p></p>\n\n    ชื่อ: นายชาณวุฒิ แดงอร่าม ตำแหน่งเจ้าหน้าที่วิเคราะห์นโยบายและแผน<p></p>\n\n    Email: budget_ee@hotmail.com<p></p>\n\n    Tel.: 098-2643999<p></p>\n\n    คุณต้องทำอย่างไรต่อไป<p></p>\n\n    หลังจากคุณได้รับรหัสผ่านของคุณจากผู้ดูแลระบบแล้ว เราจะขอให้คุณลงชื่อเข้าด้วยรหัสผ่านใหม่ของคุณ ในครั้งต่อไปที่คุณเข้าใช้ระบบ ISNRE2 ของคุณ หากต้องการคุณสามารถอัพเดทที่อยู่อีเมลหรือเปลี่ยนรหัสผ่านของคุณได้\n\n    <p></p>\n\n    <div>\n\n      <button ion-button (click)="closeForgot()">กลับหน้า login</button>\n\n    </div>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\forget\forget.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
