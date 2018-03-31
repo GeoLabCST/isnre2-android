@@ -188,9 +188,6 @@ export class RegisterPage {
       headers: {}
     }
 
-
-
-
   
     fileTransfer.upload(this.imageURI, 'http://119.59.125.189/isnre2/php_app/isnre_upload.php', options)
     .then(res => {   

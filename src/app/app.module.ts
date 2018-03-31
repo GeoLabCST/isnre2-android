@@ -24,6 +24,7 @@ import { LocationPage } from '../pages/location/location';
 import { MapPage } from '../pages/map/map';
 import { ChartPage } from '../pages/chart/chart';
 import { DssPage } from '../pages/dss/dss';
+import { HomePage } from '../pages/home/home'
 
 import { ShareService } from '../providers/service/share';
 
@@ -47,7 +48,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Formula_3Page,
     Formula_4Page,
     ChartPage,
-    DssPage
+    DssPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Formula_3Page,
     Formula_4Page,
     ChartPage,
-    DssPage
+    DssPage,
+    HomePage
   ],
   providers: [
     StatusBar,
