@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
- 
+
 import { Formula_1Page } from '../pages/formula-1/formula-1';
 import { Formula_2Page } from '../pages/formula-2/formula-2';
 import { Formula_3Page } from '../pages/formula-3/formula-3';
@@ -30,6 +30,7 @@ import { ShareService } from '../providers/service/share';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ChartDescPage } from '../pages/chart-desc/chart-desc';
 // import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
@@ -49,13 +50,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Formula_4Page,
     ChartPage,
     DssPage,
-    HomePage
+    HomePage,
+    ChartDescPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     FormsModule
   ],
   bootstrap: [IonicApp],
@@ -75,16 +77,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Formula_4Page,
     ChartPage,
     DssPage,
-    HomePage
+    HomePage,
+    ChartDescPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ShareService,
     FileTransfer,
     Camera,
     Geolocation
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -52971,6 +52971,26 @@ page-dss #map-dss {
   height: 100%;
 }
 
+page-dss .fab {
+  contain: layout;
+}
+
+page-dss button[ion-fab] {
+  overflow: visible;
+  position: relative;
+}
+
+page-dss button[ion-fab] ion-label {
+  position: absolute;
+  top: -20px;
+  right: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 24px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 page-forget [default-background] {
   background-image: url("http://119.59.125.189/images_isnre/bg004.jpg");
   background-color: white;

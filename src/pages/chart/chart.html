@@ -2,12 +2,20 @@
 
   <ion-navbar id="isnre-font">
     <ion-title>พื้นที่ป่า</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="showDesc()">
+        สอบถาม (Query)
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content id="isnre-font">
   <ion-card id="chart" block></ion-card>
+  <div padding>
+    <h4>ค้นหาจากข้อมูลประกอบ (Attribute)</h4>
+  </div>
   <ion-card>
     <ion-list>
       <ion-item>

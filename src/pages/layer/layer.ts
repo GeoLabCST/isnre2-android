@@ -37,14 +37,7 @@ export class LayerPage {
     //console.log('ionViewDidLoad LayerPage');
   }
 
-  initLyr() {
-    // this.http.get('http://119.59.125.189/service/isnre_lyr.php')
-    // .subscribe(res => {
-    //   this.lyrs = res;
-    //   //console.log(res);
-    // }, error => {
-    //   console.log("Oooops!");
-    // });    
+  initLyr() {   
 
     this.lyrs=[{
       "id": "1",

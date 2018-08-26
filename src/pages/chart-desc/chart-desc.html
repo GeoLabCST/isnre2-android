@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>สอบถาม (Query)</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>เลือกจังหวัด</ion-label>
+        <ion-select [(ngModel)]="prov_ls" multiple="false" interface="action-sheet" (ngModelChange)="showData($event)">
+          <ion-option *ngFor="let pro of pros" [value]="pro">{{pro.prov_namt}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <p></p>
+    <hr>
+    <p></p>
+    <ul class="list" *ngFor="let f of forest; let i = index">
+      <li class="item">
+        คำนวณข้อมูลเนื้อที่ป่าของจังหวัด {{f.prov_namt}}
+        <p></p>
+      </li>
+      <li class="item">พื้นที่ป่าสงวนแห่งชาติ
+        <br/> {{f.nrf_m | number: '2.'}} ตารางเมตร
+        <br/> {{f.nrf_km | number: '2.'}} ตารางกิโลเมตร
+        <br/> {{f.area_nrf | number: '2.'}} ไร่
+        <p></p>
+      </li>
+      <hr>
+      <li class="item">พื้นที่อุทยานแห่งชาติ
+        <br/> {{f.nprf_m | number: '2.' }} ตารางเมตร
+        <br/> {{f.nprf_km | number: '2.'}} ตารางกิโลเมตร
+        <br/> {{f.area_nprf | number: '2.'}} ไร่
+        <p></p>
+      </li>
+      <hr>
+      <li class="item">พื้นที่วนอุทยาน
+        <br/> {{f.fprk_m | number: '2.'}} ตารางเมตร
+        <br/> {{f.fprk_km | number: '2.'}} ตารางกิโลเมตร
+        <br/> {{f.area_fprk | number: '2.'}} ไร่
+        <p></p>
+      </li>
+      <hr>
+      <li class="item">
+        <h3>คำนวณเปอร์เซ็นต์</h3>
+        <p>พื้นที่ป่าไม้ของจังหวัด {{f.per_prov}} %</p>
+        <p>พื้นที่ป่าไม้ของประเทศ {{f.per_th}} %</p>
+      </li>
+
+    </ul>
+
+
+
+
+  </ion-card>
+</ion-content>
