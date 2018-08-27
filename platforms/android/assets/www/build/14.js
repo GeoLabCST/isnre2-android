@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 302:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DssPageModule", function() { return DssPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Formula_1PageModule", function() { return Formula_1PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dss__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formula_1__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DssPageModule = (function () {
-    function DssPageModule() {
+var Formula_1PageModule = (function () {
+    function Formula_1PageModule() {
     }
-    DssPageModule = __decorate([
+    Formula_1PageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__dss__["a" /* DssPage */],
+                __WEBPACK_IMPORTED_MODULE_2__formula_1__["a" /* Formula_1Page */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dss__["a" /* DssPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__formula_1__["a" /* Formula_1Page */]),
             ],
         })
-    ], DssPageModule);
-    return DssPageModule;
+    ], Formula_1PageModule);
+    return Formula_1PageModule;
 }());
 
-//# sourceMappingURL=dss.module.js.map
+//# sourceMappingURL=formula-1.module.js.map
 
 /***/ })
 

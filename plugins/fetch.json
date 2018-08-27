@@ -62,5 +62,21 @@
     },
     "is_top_level": false,
     "variables": {}
+  },
+  "com.darktalker.cordova.screenshot": {
+    "source": {
+      "type": "registry",
+      "id": "com.darktalker.cordova.screenshot@^0.1.6"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-media-capture": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-media-capture@3.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

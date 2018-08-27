@@ -4,27 +4,50 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>การปลูกต้นไม้ใหม่</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="screenShot()">
+        <ion-icon name="print"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
- 
+
 <ion-content no-padding>
-	<ion-fab right bottom>
-	    <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
-	     <ion-fab-list side="top">
-	    <button ion-fab  (click)="about1()" ><ion-icon name="search"></ion-icon><ion-label>การนำขยะไปแปรรูป</ion-label></button>
-	    <button ion-fab  (click)="Formula1()" ><ion-icon name="search"></ion-icon><ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label></button>
-	    <button ion-fab  (click)="Formula2()" ><ion-icon name="search"></ion-icon><ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label></button>
-	    <button ion-fab><ion-icon name="search"></ion-icon><ion-label>การปลูกต้นไม้ใหม่</ion-label></button>
-	    <button ion-fab  (click)="Formula4()" ><ion-icon name="search"></ion-icon><ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label></button>
-	    </ion-fab-list>
-	  </ion-fab>
+  <img src="{{ screen }}" *ngIf="state">
+  <ion-fab right bottom>
+    <button ion-fab color="danger">
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="about1()">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>การนำขยะไปแปรรูป</ion-label>
+      </button>
+      <button ion-fab (click)="Formula1()">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>
+      </button>
+      <button ion-fab (click)="Formula2()">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>
+      </button>
+      <button ion-fab>
+        <ion-icon name="search"></ion-icon>
+        <ion-label>การปลูกต้นไม้ใหม่</ion-label>
+      </button>
+      <button ion-fab (click)="Formula4()">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
 
 
-    <iframe src="http://119.59.125.189/isnre2/pages/formula_app4.php" frameborder="0" width="100%" height="100%"></iframe>
+  <iframe src="http://119.59.125.189/isnre2/pages/formula_app4.php" frameborder="0" width="100%" height="100%"></iframe>
 
 
 
 
 
-	
+
 </ion-content>

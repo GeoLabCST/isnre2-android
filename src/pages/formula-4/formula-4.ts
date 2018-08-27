@@ -11,6 +11,7 @@ import { AboutPage } from '../about/about';
 import { Formula_1Page } from '../formula-1/formula-1';
 import { Formula_2Page } from '../formula-2/formula-2';
 import { Formula_3Page } from '../formula-3/formula-3';
+import { Screenshot } from '@ionic-native/screenshot';
 
 @IonicPage()
 @Component({
@@ -18,8 +19,10 @@ import { Formula_3Page } from '../formula-3/formula-3';
   templateUrl: 'formula-4.html',
 })
 export class Formula_4Page {
+  screen: any;
+  state: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private screenshot: Screenshot) {
   }
 
   ionViewDidLoad() {
@@ -27,16 +30,31 @@ export class Formula_4Page {
   }
 
 
-    about1(){
+  reset() {
+    var self = this;
+    setTimeout(function () {
+      self.state = false;
+    }, 1000);
+  }
+
+
+  screenShot() {
+    this.screenshot.save('jpg', 80).then(res => {
+      this.screen = res.filePath;
+      this.state = true;
+      this.reset();
+    });
+  }
+  about1() {
     this.navCtrl.push(AboutPage);
   }
-    Formula1(){
+  Formula1() {
     this.navCtrl.push(Formula_1Page);
   }
-    Formula2(){
+  Formula2() {
     this.navCtrl.push(Formula_2Page);
   }
-    Formula3(){
+  Formula3() {
     this.navCtrl.push(Formula_3Page);
   }
 

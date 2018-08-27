@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		0CCFD456253145BAB9EE38E3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48ECC0D2F6F549EFBB5ABC9C /* AVFoundation.framework */; };
@@ -47,6 +46,7 @@
 		D008FA7ECF934CC58879A83D /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC896F21C304BEDAFD9B69B /* CDVFile.m */; };
 		D55F34D18130465F9A09E11A /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A5E9DFBCD14C2DA2073CE8 /* IonicKeyboard.m */; };
 		F42B9BD835B340A9AB54A628 /* CDVWKWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE7231C80564F4DA06D2671 /* CDVWKWebViewEngine.m */; };
+		92179DCB56F84556BEE6822C /* Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A44D0B046245F293095CCA /* Screenshot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +158,8 @@
 		F2CB37DCF7A54A6F95324547 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerURLEncodedFormRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ISNRE2/config.xml; sourceTree = "<group>"; };
 		FDC40334F0214C018394F75B /* GCDWebServerURLEncodedFormRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerURLEncodedFormRequest.h; path = "cordova-plugin-ionic-webview/GCDWebServerURLEncodedFormRequest.h"; sourceTree = "<group>"; };
+		60A44D0B046245F293095CCA /* Screenshot.m */ = {isa = PBXFileReference; name = "Screenshot.m"; path = "com.darktalker.cordova.screenshot/Screenshot.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5552810062184B0BAB10D3BA /* Screenshot.h */ = {isa = PBXFileReference; name = "Screenshot.h"; path = "com.darktalker.cordova.screenshot/Screenshot.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,8 @@
 				915ED9F0BA8A4C9A84A631EF /* CDVViewController+SplashScreen.h */,
 				31A5E9DFBCD14C2DA2073CE8 /* IonicKeyboard.m */,
 				129702BBCE0C4E5CBEF59C94 /* IonicKeyboard.h */,
+				60A44D0B046245F293095CCA /* Screenshot.m */,
+				5552810062184B0BAB10D3BA /* Screenshot.h */,
 			);
 			name = Plugins;
 			path = ISNRE2/Plugins;
@@ -373,7 +377,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 920;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 9H4VV922XQ;
@@ -486,6 +490,7 @@
 				76CEA21AF87241D4891C59A3 /* CDVSplashScreen.m in Sources */,
 				78FEB101A8BC468CAE2144C5 /* CDVViewController+SplashScreen.m in Sources */,
 				D55F34D18130465F9A09E11A /* IonicKeyboard.m in Sources */,
+				92179DCB56F84556BEE6822C /* Screenshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

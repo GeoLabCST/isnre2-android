@@ -1,13 +1,13 @@
 webpackJsonp([20],{
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartDescPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,27 +54,28 @@ var ChartDescPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-chart-desc',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\chart-desc\chart-desc.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>สอบถาม (Query)</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card>\n    <ion-list>\n      <ion-item>\n        <ion-label>เลือกจังหวัด</ion-label>\n        <ion-select [(ngModel)]="prov_ls" multiple="false" interface="action-sheet" (ngModelChange)="showData($event)">\n          <ion-option *ngFor="let pro of pros" [value]="pro">{{pro.prov_namt}}</ion-option>\n        </ion-select>\n      </ion-item>\n    </ion-list>\n    <p></p>\n    <hr>\n    <p></p>\n    <ul class="list" *ngFor="let f of forest; let i = index">\n      <li class="item">\n        คำนวณข้อมูลเนื้อที่ป่าของจังหวัด {{f.prov_namt}}\n        <p></p>\n      </li>\n      <li class="item">พื้นที่ป่าสงวนแห่งชาติ\n        <br/> {{f.nrf_m | number: \'2.\'}} ตารางเมตร\n        <br/> {{f.nrf_km | number: \'2.\'}} ตารางกิโลเมตร\n        <br/> {{f.area_nrf | number: \'2.\'}} ไร่\n        <p></p>\n      </li>\n      <hr>\n      <li class="item">พื้นที่อุทยานแห่งชาติ\n        <br/> {{f.nprf_m | number: \'2.\' }} ตารางเมตร\n        <br/> {{f.nprf_km | number: \'2.\'}} ตารางกิโลเมตร\n        <br/> {{f.area_nprf | number: \'2.\'}} ไร่\n        <p></p>\n      </li>\n      <hr>\n      <li class="item">พื้นที่วนอุทยาน\n        <br/> {{f.fprk_m | number: \'2.\'}} ตารางเมตร\n        <br/> {{f.fprk_km | number: \'2.\'}} ตารางกิโลเมตร\n        <br/> {{f.area_fprk | number: \'2.\'}} ไร่\n        <p></p>\n      </li>\n      <hr>\n      <li class="item">\n        <h3>คำนวณเปอร์เซ็นต์</h3>\n        <p>พื้นที่ป่าไม้ของจังหวัด {{f.per_prov}} %</p>\n        <p>พื้นที่ป่าไม้ของประเทศ {{f.per_th}} %</p>\n      </li>\n\n    </ul>\n\n\n\n\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\chart-desc\chart-desc.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
     ], ChartDescPage);
     return ChartDescPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=chart-desc.js.map
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_highcharts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_desc_chart_desc__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_desc_chart_desc__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -281,7 +282,7 @@ var ChartPage = (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -289,6 +290,8 @@ var ChartPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_service_share__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -301,6 +304,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the ContactPage page.
  *
@@ -308,24 +313,109 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ContactPage = (function () {
-    function ContactPage(navCtrl, navParams, shareService) {
+    function ContactPage(navCtrl, navParams, fb, http, alertCtrl, loadingCtrl, shareService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.fb = fb;
+        this.http = http;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.shareService = shareService;
+        this.pet = "puppies";
         // Receiving data via Service
         this.usrData = this.shareService.getUserData();
         console.log(this.usrData);
         //console.log(this.pos.lng);
+        this.reportForm = fb.group({
+            'name_user': this.name_user,
+            'lname_user': this.lname_user,
+            'tel_user': this.tel_user,
+            'prov_user': this.prov_user,
+            'amp_user': this.amp_user,
+            'tam_user': this.tam_user,
+            'email_user': this.email_user,
+            'pass_user': this.pass_user
+        });
     }
+    ContactPage.prototype.updatestu = function () {
+        var _this = this;
+        var loader = this.loadingCtrl.create({ content: "กำลังบันทึกข้อมูล.." });
+        var data = JSON.stringify({
+            'name_user': this.reportForm.controls['name_user'].value,
+            'lname_user': this.reportForm.controls['lname_user'].value,
+            'tel_user': this.reportForm.controls['tel_user'].value,
+            'prov_user': this.reportForm.controls['prov_user'].value,
+            'amp_user': this.reportForm.controls['amp_user'].value,
+            'tam_user': this.reportForm.controls['tam_user'].value,
+            'email_user': this.reportForm.controls['email_user'].value,
+            'pass_user': this.reportForm.controls['pass_user'].value,
+            'id': '8'
+        });
+        console.log(data);
+        loader.present();
+        //http://localhost/isnre/php_app/update_profile.php
+        this.http.post('http://119.59.125.189/isnre2/php_app/update_profile.php', data)
+            .subscribe(function (res) {
+            _this.res = res;
+            if (_this.res.message == 'error') {
+                loader.dismiss();
+                var alert_1 = _this.alertCtrl.create({
+                    title: 'ไม่สามารถบันทึกข้อมูลได้',
+                    subTitle: 'กรุณาลองอีกครั้ง',
+                    buttons: ['ok']
+                });
+                alert_1.present();
+            }
+            else if (_this.res.message == 'success') {
+                loader.dismiss();
+                var alert_2 = _this.alertCtrl.create({
+                    title: 'แก้ไขข้อมูลเรียบร้อยแล้ว',
+                    subTitle: '',
+                    buttons: ['ok']
+                });
+                _this.shareService.setUserData(_this.res);
+                alert_2.present();
+            }
+            else {
+                loader.dismiss();
+                var alert_3 = _this.alertCtrl.create({
+                    title: 'ไม่สามารถบันทึกข้อมูลได้',
+                    subTitle: 'กรุณาลองอีกครั้ง',
+                    buttons: ['ok']
+                });
+                alert_3.present();
+            }
+        }, function (error) {
+            console.log("Oooops!");
+            loader.dismiss();
+        });
+    };
     ContactPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ContactPage');
+        var _this = this;
+        var id_user = this.shareService.usrData.id_user;
+        var data2 = JSON.stringify({
+            'id_user': id_user
+        });
+        //http://119.59.125.189/isnre2/php_app/view_stat.php
+        var loader = this.loadingCtrl.create({ content: "...Loading" });
+        loader.present();
+        this.http.post("http://119.59.125.189/isnre2/php_app/view_stat.php", data2)
+            .subscribe(function (res2) {
+            _this.res2 = res2;
+            console.log(res2);
+            loader.dismiss();
+        });
     };
     ContactPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contact',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/'<ion-header  id="isnre-font">\n\n  <ion-navbar>\n\n    <ion-title>Profile</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n \n\n<ion-content padding default-background>\n\n<ion-card  >\n\n\n\n  <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n\n\n\n\n  <ion-item>\n\n    <ion-icon name="contact" item-start large></ion-icon>\n\n    <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n    <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-icon name="pin" item-left large ></ion-icon>\n\n    <p>จังหวัด : {{usrData.prov_user}}</p>\n\n    <p>อำเภอ : {{usrData.amp_user}}</p>\n\n    <p>ตำบล : {{usrData.tam_user}}</p>\n\n  </ion-item>\n\n\n\n    \n\n</ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/,
+            selector: 'page-contact',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/'<ion-header id="isnre-font">\n\n  <ion-navbar no-border-bottom>\n\n    <ion-title>\n\n      ข้อมูลส่วนตัว\n\n    </ion-title>\n\n  </ion-navbar>\n\n\n\n  <ion-toolbar no-border-top>\n\n    <ion-segment [(ngModel)]="pet">\n\n      <ion-segment-button value="puppies">\n\n        โปรไฟล์\n\n      </ion-segment-button>\n\n      <ion-segment-button value="kittens">\n\n        สถิติการใช้งาน\n\n      </ion-segment-button>\n\n\n\n    </ion-segment>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding default-background>\n\n  <ion-card>\n\n    <div [ngSwitch]="pet">\n\n      <!-- <ion-list *ngSwitchCase="\'puppies\'">\n\n        <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n        <ion-item>\n\n          <ion-icon name="contact" item-start large></ion-icon>\n\n          <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n          <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-icon name="pin" item-left large></ion-icon>\n\n          <p>จังหวัด : {{usrData.prov_user}}</p>\n\n          <p>อำเภอ : {{usrData.amp_user}}</p>\n\n          <p>ตำบล : {{usrData.tam_user}}</p>\n\n        </ion-item>\n\n      </ion-list> -->\n\n\n\n      <ion-list *ngSwitchCase="\'kittens\'">\n\n        <ion-list-header>\n\n          จำนวนที่เข้าใช้งานทั้งหมด {{res2.length}} ครั้ง\n\n        </ion-list-header>\n\n        <ion-list *ngFor="let item of res2">\n\n          <ion-item> เวลาเข้าใช้งาน {{item.date_acces}} </ion-item>\n\n        </ion-list>\n\n      </ion-list>\n\n\n\n      <ion-list *ngSwitchCase="\'puppies\'">\n\n        <ion-list>\n\n          <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n          <!-- <ion-item>\n\n            <ion-icon name="contact" item-start large></ion-icon>\n\n            <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n            <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n          </ion-item>\n\n\n\n          <ion-item>\n\n            <ion-icon name="pin" item-left large></ion-icon>\n\n            <p>จังหวัด : {{usrData.prov_user}}</p>\n\n            <p>อำเภอ : {{usrData.amp_user}}</p>\n\n            <p>ตำบล : {{usrData.tam_user}}</p>\n\n          </ion-item> -->\n\n\n\n          <form novalidate [formGroup]="reportForm">\n\n            <ion-item>\n\n              <ion-label>ชื่อ</ion-label>\n\n              <ion-input type="text" formControlName="name_user" value="{{usrData.name_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>นามสกุล</ion-label>\n\n              <ion-input type="text" formControlName="lname_user" value="{{usrData.lname_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>เบอร์โทร</ion-label>\n\n              <ion-input type="text" formControlName="tel_user" value="{{usrData.tel_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>จังหวัด</ion-label>\n\n              <ion-input type="text" formControlName="prov_user" value="{{usrData.prov_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>อำเภอ</ion-label>\n\n              <ion-input type="text" formControlName="amp_user" value="{{usrData.amp_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>ตำบล</ion-label>\n\n              <ion-input type="text" formControlName="tam_user" value="{{usrData.tam_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-list-header>\n\n              การเข้าใช้งานระบบ\n\n            </ion-list-header>\n\n\n\n            <ion-item>\n\n              <ion-label>Email</ion-label>\n\n              <ion-input type="text" formControlName="email_user" value="{{usrData.email_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>Password</ion-label>\n\n              <ion-input type="text" formControlName="pass_user" value="{{usrData.pass_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n          </form>\n\n\n\n        </ion-list>\n\n\n\n        <div padding>\n\n          <button ion-button full (click)="updatestu()">บันทึกข้อมูล</button>\n\n        </div>\n\n      </ion-list>\n\n\n\n    </div>\n\n\n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_service_share__["a" /* ShareService */]])
     ], ContactPage);
     return ContactPage;
@@ -335,23 +425,23 @@ var ContactPage = (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DssPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__location_location__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__location_location__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -407,10 +497,9 @@ var DssPage = (function () {
         return this.showInfo(lat, lng);
     };
     DssPage.prototype.loadMap = function () {
-        var _this = this;
         this.map = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.map('map-dss', {
             center: [13.00, 101.50],
-            zoom: 5,
+            zoom: 6,
             zoomControl: false,
         });
         var roads = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.gridLayer.googleMutant({
@@ -422,17 +511,77 @@ var DssPage = (function () {
         var terrain = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.gridLayer.googleMutant({
             type: 'terrain' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
         });
+        var c28_foresttype = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c28_foresttype',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c29_nrf = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c29_nrf',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c30_nprk = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c30_nprk',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c32_wldsshp = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c32_wldsshp',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c33_nhw = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c33_nhw',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c31_fprk = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c31_fprk',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c02_province = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c02_province',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c03_district = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c03_district',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c04_subdistrict = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c04_subdistrict',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
         var baseLayers = {
             "แผนที่ถนน": roads,
             "แผนที่ภาพดาวเทียม": satellite,
-            "แผนที่ภูมิประเทศ": terrain,
+            "แผนที่ภูมิประเทศ": terrain.addTo(this.map),
         };
-        __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.control.layers(baseLayers).addTo(this.map);
-        //set measure default
-        this.measure = false;
-        //get featureinfo
-        //this.map.on('click', this.showInfo);
-        this.map.on('click', function (e) { _this.onMapClick(e); });
+        var overlayLayers = {
+            "เขตจังหวัด": c02_province.addTo(this.map),
+            "เขตอำเภอ": c03_district.addTo(this.map),
+            "เขตตำบล": c04_subdistrict,
+            "ขอบเขตชนิดของป่าไม้": c28_foresttype.addTo(this.map),
+            "ป่าสงวนแห่งชาติ": c29_nrf,
+            "อุทยานแห่งชาติ": c30_nprk,
+            "วนอุทยาน": c31_fprk,
+            "เขตรักษาพันธุ์สัตว์ป่า": c32_wldsshp,
+            "เขตห้ามล่าสัตว์ป่า": c33_nhw,
+        };
+        __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.control.layers(baseLayers, overlayLayers).addTo(this.map);
     };
     DssPage.prototype.locFn = function (locType, locCode, bbox) {
         if (locType == 'all') {
@@ -538,7 +687,7 @@ var DssPage = (function () {
     };
     DssPage.prototype.addMeasure = function () {
         var options = {
-            position: 'topright',
+            position: 'topleft',
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
             primaryAreaUnit: 'sqmeters',
@@ -558,12 +707,9 @@ var DssPage = (function () {
         if (this.measure == false) {
             this.control = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.control.measure(options).addTo(this.map);
             this.measure = true;
-            //console.log(this.measure);
         }
         else {
-            //L.Control.remove()
             this.measure = false;
-            //console.log(this.measure);
             this.map.removeControl(this.control);
         }
     };
@@ -623,6 +769,16 @@ var DssPage = (function () {
             //console.log(this.pos);
         }
     };
+    DssPage.prototype.enableInfo = function () {
+        if (this.info == false) {
+            this.state = 'info';
+            this.info = true;
+        }
+        else {
+            this.state = '';
+            this.info = false;
+        }
+    };
     DssPage.prototype.showInfo = function (lat, lng) {
         //this.shareService.setUserData(e);
         var modalLeg = this.modalCtrl.create('InfoPage', {
@@ -634,11 +790,43 @@ var DssPage = (function () {
         modalLeg.present();
     };
     DssPage.prototype.showBuffer = function () {
+        var _this = this;
         console.log('buffer');
+        this.drawnItems = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.featureGroup().addTo(this.map);
+        var options = {
+            position: 'topleft',
+            draw: {
+                polyline: false,
+                polygon: false,
+                circle: true,
+                rectangle: false,
+                marker: false,
+                circlemarker: false
+            },
+            edit: {
+                featureGroup: this.drawnItems,
+                remove: true
+            }
+        };
+        if (this.circle == false) {
+            // this.circleControl = L.control.measure(options).addTo(this.map);
+            this.drawControl = new __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Control.Draw(options);
+            this.map.addControl(this.drawControl);
+            this.circle = true;
+            this.map.on(__WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Draw.Event.CREATED, function (e) {
+                var layer = e.layer;
+                _this.drawnItems.addLayer(layer);
+            });
+        }
+        else {
+            //L.Control.remove()
+            this.circle = false;
+            this.map.removeControl(this.drawControl);
+        }
     };
     DssPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dss',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/'<ion-header>\n\n  <ion-navbar id="isnre-font">\n    <ion-title>สนับสนุนการตัดสินใจ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab right bottom>\n    <button ion-fab color="danger">\n      <ion-icon name="arrow-dropup"></ion-icon>\n    </button>\n    <ion-fab-list side="top">\n      <button ion-fab (click)="showBuffer()">\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n        <ion-label>buffering</ion-label>\n      </button>\n      <button ion-fab (click)="addSelectarea()">\n        <ion-icon name="search" color="green"></ion-icon>\n        <ion-label>ค้นหา</ion-label>\n      </button>\n      <button ion-fab (click)="addLayer()">\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n        <ion-label>ชั้นข้อมูล</ion-label>\n      </button>\n      <button ion-fab (click)="addLegend()">\n        <ion-icon name="bowtie" color="green"></ion-icon>\n        <ion-label>สัญลักษณ์</ion-label>\n      </button>\n      <button ion-fab (click)="addMeasure()">\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n        <ion-label>เครื่องมือวัด</ion-label>\n      </button>\n      <button ion-fab (click)="addLocation()">\n        <ion-icon name="locate" color="blue"></ion-icon>\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n      </button>\n      <button ion-fab (click)="addData()">\n        <ion-icon name="pin" color="red"></ion-icon>\n        <ion-label>เพิ่มข้อมูล</ion-label>\n      </button>\n\n    </ion-fab-list>\n  </ion-fab>\n  <div id="map-dss"></div>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/,
+            selector: 'page-dss',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/'<ion-header>\n\n  <ion-navbar id="isnre-font">\n    <ion-title>สนับสนุนการตัดสินใจ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab right bottom>\n    <button ion-fab color="danger">\n      <ion-icon name="arrow-dropup"></ion-icon>\n    </button>\n    <ion-fab-list side="top">\n      <button ion-fab (click)="showBuffer()">\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n        <ion-label>buffering</ion-label>\n      </button>\n      <button ion-fab (click)="addSelectarea()">\n        <ion-icon name="search" color="green"></ion-icon>\n        <ion-label>ค้นหา</ion-label>\n      </button>\n      <!-- <button ion-fab (click)="addLayer()">\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n        <ion-label>ชั้นข้อมูล</ion-label>\n      </button> -->\n      <button ion-fab (click)="addLegend()">\n        <ion-icon name="bowtie" color="green"></ion-icon>\n        <ion-label>สัญลักษณ์</ion-label>\n      </button>\n      <button ion-fab (click)="addMeasure()">\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n        <ion-label>เครื่องมือวัด</ion-label>\n      </button>\n      <button ion-fab (click)="addLocation()">\n        <ion-icon name="locate" color="blue"></ion-icon>\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n      </button>\n      <button ion-fab (click)="addData()">\n        <ion-icon name="pin" color="red"></ion-icon>\n        <ion-label>เพิ่มข้อมูล</ion-label>\n      </button>\n      <button ion-fab (click)="enableInfo()">\n        <ion-icon name="information-circle"></ion-icon>\n        <ion-label>Popup info</ion-label>\n      </button>\n\n    </ion-fab-list>\n  </ion-fab>\n  <div id="map-dss"></div>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -655,23 +843,23 @@ var DssPage = (function () {
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_leaflet__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_leaflet__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet_measure_dist_leaflet_measure__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet_measure_dist_leaflet_measure__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_leaflet_measure_dist_leaflet_measure__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_gridlayer_googlemutant__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_gridlayer_googlemutant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__location_location__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_welcome_welcome__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__location_location__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_welcome_welcome__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -963,18 +1151,18 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__welcome_welcome__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__welcome_welcome__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1186,7 +1374,7 @@ var RegisterPage = (function () {
 
 /***/ }),
 
-/***/ 134:
+/***/ 135:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1199,44 +1387,44 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 134;
+webpackEmptyAsyncContext.id = 135;
 
 /***/ }),
 
-/***/ 176:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/about/about.module": [
-		301,
+		302,
 		19
 	],
 	"../pages/add-data/add-data.module": [
-		302,
+		303,
 		4
 	],
 	"../pages/chart-desc/chart-desc.module": [
-		303,
+		304,
 		18
 	],
 	"../pages/chart/chart.module": [
-		304,
+		305,
 		17
 	],
 	"../pages/contact/contact.module": [
-		305,
+		306,
 		16
 	],
 	"../pages/dss/dss.module": [
-		306,
+		307,
 		15
 	],
 	"../pages/forget/forget.module": [
-		307,
+		308,
 		3
 	],
 	"../pages/formula-1/formula-1.module": [
-		308,
+		310,
 		14
 	],
 	"../pages/formula-2/formula-2.module": [
@@ -1244,47 +1432,47 @@ var map = {
 		13
 	],
 	"../pages/formula-3/formula-3.module": [
-		310,
+		311,
 		12
 	],
 	"../pages/formula-4/formula-4.module": [
-		311,
+		312,
 		11
 	],
 	"../pages/home/home.module": [
-		312,
+		313,
 		10
 	],
 	"../pages/info/info.module": [
-		313,
+		314,
 		2
 	],
 	"../pages/layer/layer.module": [
-		314,
+		315,
 		1
 	],
 	"../pages/legend/legend.module": [
-		315,
+		316,
 		0
 	],
 	"../pages/location/location.module": [
-		316,
+		317,
 		9
 	],
 	"../pages/map/map.module": [
-		317,
+		318,
 		8
 	],
 	"../pages/other/other.module": [
-		318,
+		319,
 		7
 	],
 	"../pages/register/register.module": [
-		319,
+		320,
 		6
 	],
 	"../pages/welcome/welcome.module": [
-		320,
+		321,
 		5
 	]
 };
@@ -1299,22 +1487,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 176;
+webpackAsyncContext.id = 177;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 178:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_chart__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dss_dss__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_chart__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dss_dss__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1356,7 +1544,7 @@ var TabsPage = (function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1401,13 +1589,13 @@ var OtherPage = (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(244);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1415,7 +1603,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1423,37 +1611,39 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_formula_1_formula_1__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_formula_2_formula_2__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_formula_3_formula_3__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_formula_4_formula_4__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_welcome_welcome__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_register_register__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_other_other__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_formula_1_formula_1__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_formula_2_formula_2__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_formula_3_formula_3__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_formula_4_formula_4__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_welcome_welcome__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_register_register__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_other_other__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_location_location__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chart_chart__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_dss_dss__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_home_home__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_location_location__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chart_chart__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_dss_dss__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_home_home__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_chart_desc_chart_desc__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_chart_desc_chart_desc__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1518,8 +1708,8 @@ var AppModule = (function () {
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dss/dss.module#DssPageModule', name: 'DssPage', segment: 'dss', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/forget/forget.module#ForgetPageModule', name: 'ForgetPage', segment: 'forget', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/formula-1/formula-1.module#Formula_1PageModule', name: 'Formula_1Page', segment: 'formula-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-2/formula-2.module#Formula_2PageModule', name: 'Formula_2Page', segment: 'formula-2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/formula-1/formula-1.module#Formula_1PageModule', name: 'Formula_1Page', segment: 'formula-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-3/formula-3.module#Formula_3PageModule', name: 'Formula_3Page', segment: 'formula-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-4/formula-4.module#Formula_4PageModule', name: 'Formula_4Page', segment: 'formula-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
@@ -1559,6 +1749,7 @@ var AppModule = (function () {
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_28__ionic_native_screenshot__["a" /* Screenshot */],
                 __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_24__providers_service_share__["a" /* ShareService */],
@@ -1582,10 +1773,11 @@ var AppModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formula_1_formula_1__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_2_formula_2__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_3_formula_3__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_screenshot__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_2_formula_2__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_3_formula_3__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__formula_4_formula_4__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1595,6 +1787,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -1608,30 +1801,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var AboutPage = (function () {
-    function AboutPage(navCtrl, navParams) {
+    function AboutPage(navCtrl, navParams, screenshot) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.screenshot = screenshot;
+        this.state = false;
     }
     AboutPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AboutPage');
     };
+    AboutPage.prototype.reset = function () {
+        var self = this;
+        setTimeout(function () {
+            self.state = false;
+        }, 1000);
+    };
+    AboutPage.prototype.screenShot = function () {
+        var _this = this;
+        this.screenshot.save('jpg', 80).then(function (res) {
+            _this.screen = res.filePath;
+            _this.state = true;
+            _this.reset();
+        });
+    };
     AboutPage.prototype.Formula1 = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__formula_1_formula_1__["a" /* Formula_1Page */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__["a" /* Formula_1Page */]);
     };
     AboutPage.prototype.Formula2 = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__formula_2_formula_2__["a" /* Formula_2Page */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__formula_2_formula_2__["a" /* Formula_2Page */]);
     };
     AboutPage.prototype.Formula3 = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__formula_3_formula_3__["a" /* Formula_3Page */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__formula_3_formula_3__["a" /* Formula_3Page */]);
     };
     AboutPage.prototype.Formula4 = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__["a" /* Formula_4Page */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__formula_4_formula_4__["a" /* Formula_4Page */]);
     };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\about\about.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>การนำขยะไปแปรรูป</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab>\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การนำขยะไปแปรรูป</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula2()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula3()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การปลูกต้นไม้ใหม่</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula4()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>\n\n      </button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n  <iframe src="http://119.59.125.189/isnre2/pages/formula_app1.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\about\about.html"*/,
+            selector: 'page-about',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\about\about.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>การนำขยะไปแปรรูป</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="screenShot()">\n\n        <ion-icon name="print"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n\n\n  <img src="{{ screen }}" *ngIf="state">\n\n\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab>\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การนำขยะไปแปรรูป</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula2()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula3()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การปลูกต้นไม้ใหม่</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula4()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>\n\n      </button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n  <iframe src="http://119.59.125.189/isnre2/pages/formula_app1.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\about\about.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_screenshot__["a" /* Screenshot */]])
     ], AboutPage);
     return AboutPage;
 }());
@@ -1640,16 +1849,16 @@ var AboutPage = (function () {
 
 /***/ }),
 
-/***/ 300:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1746,7 +1955,7 @@ var ShareService = (function () {
 
 /***/ }),
 
-/***/ 35:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1754,9 +1963,10 @@ var ShareService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_2_formula_2__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_3_formula_3__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_2_formula_2__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_3_formula_3__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1778,13 +1988,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Formula_1Page = (function () {
-    function Formula_1Page(navCtrl, navParams) {
+    function Formula_1Page(navCtrl, navParams, screenshot) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.screenshot = screenshot;
+        this.state = false;
     }
     Formula_1Page.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Formula_1Page');
+    };
+    Formula_1Page.prototype.reset = function () {
+        var self = this;
+        setTimeout(function () {
+            self.state = false;
+        }, 1000);
+    };
+    Formula_1Page.prototype.screenShot = function () {
+        var _this = this;
+        this.screenshot.save('jpg', 80).then(function (res) {
+            _this.screen = res.filePath;
+            _this.state = true;
+            _this.reset();
+        });
     };
     Formula_1Page.prototype.about1 = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__about_about__["a" /* AboutPage */]);
@@ -1800,9 +2027,9 @@ var Formula_1Page = (function () {
     };
     Formula_1Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-formula-1',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-1\formula-1.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>นำขยะรีไซเคิลไปจำหน่าย</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n \n\n<ion-content no-padding>\n\n	<ion-fab right bottom>\n\n	    <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>\n\n	     <ion-fab-list side="top">\n\n	    <button ion-fab  (click)="about1()" ><ion-icon name="search"></ion-icon><ion-label>การนำขยะไปแปรรูป</ion-label></button>\n\n	    <button ion-fab ><ion-icon name="search"></ion-icon><ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label></button>\n\n	    <button ion-fab  (click)="Formula2()" ><ion-icon name="search"></ion-icon><ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label></button>\n\n	    <button ion-fab  (click)="Formula3()" ><ion-icon name="search"></ion-icon><ion-label>การปลูกต้นไม้ใหม่</ion-label></button>\n\n	    <button ion-fab  (click)="Formula4()" ><ion-icon name="search"></ion-icon><ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label></button>\n\n	    </ion-fab-list>\n\n\n\n\n\n	  </ion-fab>\n\n\n\n\n\n    <iframe src="http://119.59.125.189/isnre2/pages/formula_app2.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n	\n\n</ion-content>'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-1\formula-1.html"*/,
+            selector: 'page-formula-1',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-1\formula-1.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>นำขยะรีไซเคิลไปจำหน่าย</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="screenShot()">\n\n        <ion-icon name="print"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <img src="{{ screen }}" *ngIf="state">\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab (click)="about1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การนำขยะไปแปรรูป</ion-label>\n\n      </button>\n\n      <button ion-fab>\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula2()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula3()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การปลูกต้นไม้ใหม่</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula4()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>\n\n      </button>\n\n    </ion-fab-list>\n\n\n\n\n\n  </ion-fab>\n\n\n\n\n\n  <iframe src="http://119.59.125.189/isnre2/pages/formula_app2.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-1\formula-1.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__["a" /* Screenshot */]])
     ], Formula_1Page);
     return Formula_1Page;
 }());
@@ -1811,7 +2038,7 @@ var Formula_1Page = (function () {
 
 /***/ }),
 
-/***/ 36:
+/***/ 38:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1819,9 +2046,10 @@ var Formula_1Page = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_3_formula_3__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_3_formula_3__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1843,13 +2071,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Formula_2Page = (function () {
-    function Formula_2Page(navCtrl, navParams) {
+    function Formula_2Page(navCtrl, navParams, screenshot) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.screenshot = screenshot;
+        this.state = false;
     }
     Formula_2Page.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Formula_2Page');
+    };
+    Formula_2Page.prototype.reset = function () {
+        var self = this;
+        setTimeout(function () {
+            self.state = false;
+        }, 1000);
+    };
+    Formula_2Page.prototype.screenShot = function () {
+        var _this = this;
+        this.screenshot.save('jpg', 80).then(function (res) {
+            _this.screen = res.filePath;
+            _this.state = true;
+            _this.reset();
+        });
     };
     Formula_2Page.prototype.about1 = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__about_about__["a" /* AboutPage */]);
@@ -1865,9 +2110,9 @@ var Formula_2Page = (function () {
     };
     Formula_2Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-formula-2',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-2\formula-2.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n \n\n<ion-content no-padding>\n\n	<ion-fab right bottom>\n\n	    <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>\n\n	     <ion-fab-list side="top">\n\n	    <button ion-fab  (click)="about1()" ><ion-icon name="search"></ion-icon><ion-label>การนำขยะไปแปรรูป</ion-label></button>\n\n	    <button ion-fab  (click)="Formula1()" ><ion-icon name="search"></ion-icon><ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label></button>\n\n	    <button ion-fab  ><ion-icon name="search"></ion-icon><ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label></button>\n\n	    <button ion-fab  (click)="Formula3()" ><ion-icon name="search"></ion-icon><ion-label>การปลูกต้นไม้ใหม่</ion-label></button>\n\n	    <button ion-fab  (click)="Formula4()" ><ion-icon name="search"></ion-icon><ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label></button>\n\n	    </ion-fab-list>\n\n	  </ion-fab>\n\n\n\n\n\n    <iframe src="http://119.59.125.189/isnre2/pages/formula_app3.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n	\n\n</ion-content>'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-2\formula-2.html"*/,
+            selector: 'page-formula-2',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-2\formula-2.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="screenShot()">\n\n        <ion-icon name="print"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <img src="{{ screen }}" *ngIf="state">\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab (click)="about1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การนำขยะไปแปรรูป</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>\n\n      </button>\n\n      <button ion-fab>\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula3()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การปลูกต้นไม้ใหม่</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula4()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>\n\n      </button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n\n\n  <iframe src="http://119.59.125.189/isnre2/pages/formula_app3.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-2\formula-2.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__["a" /* Screenshot */]])
     ], Formula_2Page);
     return Formula_2Page;
 }());
@@ -1876,7 +2121,7 @@ var Formula_2Page = (function () {
 
 /***/ }),
 
-/***/ 37:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1884,9 +2129,10 @@ var Formula_2Page = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_2_formula_2__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_2_formula_2__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_4_formula_4__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1908,13 +2154,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Formula_3Page = (function () {
-    function Formula_3Page(navCtrl, navParams) {
+    function Formula_3Page(navCtrl, navParams, screenshot) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.screenshot = screenshot;
+        this.state = false;
     }
     Formula_3Page.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Formula_3Page');
+    };
+    Formula_3Page.prototype.reset = function () {
+        var self = this;
+        setTimeout(function () {
+            self.state = false;
+        }, 1000);
+    };
+    Formula_3Page.prototype.screenShot = function () {
+        var _this = this;
+        this.screenshot.save('jpg', 80).then(function (res) {
+            _this.screen = res.filePath;
+            _this.state = true;
+            _this.reset();
+        });
     };
     Formula_3Page.prototype.about1 = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__about_about__["a" /* AboutPage */]);
@@ -1930,9 +2193,9 @@ var Formula_3Page = (function () {
     };
     Formula_3Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-formula-3',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-3\formula-3.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>การปลูกต้นไม้ใหม่</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n \n\n<ion-content no-padding>\n\n	<ion-fab right bottom>\n\n	    <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>\n\n	     <ion-fab-list side="top">\n\n	    <button ion-fab  (click)="about1()" ><ion-icon name="search"></ion-icon><ion-label>การนำขยะไปแปรรูป</ion-label></button>\n\n	    <button ion-fab  (click)="Formula1()" ><ion-icon name="search"></ion-icon><ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label></button>\n\n	    <button ion-fab  (click)="Formula2()" ><ion-icon name="search"></ion-icon><ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label></button>\n\n	    <button ion-fab><ion-icon name="search"></ion-icon><ion-label>การปลูกต้นไม้ใหม่</ion-label></button>\n\n	    <button ion-fab  (click)="Formula4()" ><ion-icon name="search"></ion-icon><ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label></button>\n\n	    </ion-fab-list>\n\n	  </ion-fab>\n\n\n\n\n\n    <iframe src="http://119.59.125.189/isnre2/pages/formula_app4.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n	\n\n</ion-content>'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-3\formula-3.html"*/,
+            selector: 'page-formula-3',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-3\formula-3.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>การปลูกต้นไม้ใหม่</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="screenShot()">\n\n        <ion-icon name="print"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n  <img src="{{ screen }}" *ngIf="state">\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab (click)="about1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การนำขยะไปแปรรูป</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula2()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>\n\n      </button>\n\n      <button ion-fab>\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การปลูกต้นไม้ใหม่</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula4()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>\n\n      </button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n\n\n  <iframe src="http://119.59.125.189/isnre2/pages/formula_app4.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-3\formula-3.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__["a" /* Screenshot */]])
     ], Formula_3Page);
     return Formula_3Page;
 }());
@@ -1941,7 +2204,7 @@ var Formula_3Page = (function () {
 
 /***/ }),
 
-/***/ 38:
+/***/ 40:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1949,9 +2212,10 @@ var Formula_3Page = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_2_formula_2__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_3_formula_3__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formula_1_formula_1__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formula_2_formula_2__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__formula_3_formula_3__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1973,13 +2237,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Formula_4Page = (function () {
-    function Formula_4Page(navCtrl, navParams) {
+    function Formula_4Page(navCtrl, navParams, screenshot) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.screenshot = screenshot;
+        this.state = false;
     }
     Formula_4Page.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Formula_4Page');
+    };
+    Formula_4Page.prototype.reset = function () {
+        var self = this;
+        setTimeout(function () {
+            self.state = false;
+        }, 1000);
+    };
+    Formula_4Page.prototype.screenShot = function () {
+        var _this = this;
+        this.screenshot.save('jpg', 80).then(function (res) {
+            _this.screen = res.filePath;
+            _this.state = true;
+            _this.reset();
+        });
     };
     Formula_4Page.prototype.about1 = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__about_about__["a" /* AboutPage */]);
@@ -1995,9 +2276,9 @@ var Formula_4Page = (function () {
     };
     Formula_4Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-formula-4',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-4\formula-4.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n \n\n<ion-content no-padding>\n\n	<ion-fab right bottom>\n\n	    <button ion-fab color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>\n\n	     <ion-fab-list side="top">\n\n	    <button ion-fab  (click)="about1()" ><ion-icon name="search"></ion-icon><ion-label>การนำขยะไปแปรรูป</ion-label></button>\n\n	    <button ion-fab  (click)="Formula1()" ><ion-icon name="search"></ion-icon><ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label></button>\n\n	    <button ion-fab  (click)="Formula2()" ><ion-icon name="search"></ion-icon><ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label></button>\n\n	    <button ion-fab  (click)="Formula3()" ><ion-icon name="search"></ion-icon><ion-label>การปลูกต้นไม้ใหม่</ion-label></button>\n\n	    <button ion-fab ><ion-icon name="search"></ion-icon><ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label></button>\n\n	    </ion-fab-list>\n\n	  </ion-fab>\n\n\n\n\n\n    <iframe src="http://119.59.125.189/isnre2/pages/formula_app5.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n	\n\n</ion-content>'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-4\formula-4.html"*/,
+            selector: 'page-formula-4',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\formula-4\formula-4.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="screenShot()">\n\n        <ion-icon name="print"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-padding>\n\n\n\n  <img src="{{ screen }}" *ngIf="state">\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab (click)="about1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การนำขยะไปแปรรูป</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula1()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>นำขยะรีไซเคิลไปจำหน่าย</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula2()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>อนุรักษ์ป่าพื้นที่สีเขียวเดิม</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="Formula3()">\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การปลูกต้นไม้ใหม่</ion-label>\n\n      </button>\n\n      <button ion-fab>\n\n        <ion-icon name="search"></ion-icon>\n\n        <ion-label>การเปลี่ยนอุปกรณ์ไฟฟ้าแสงสว่าง</ion-label>\n\n      </button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n\n\n  <iframe src="http://119.59.125.189/isnre2/pages/formula_app5.php" frameborder="0" width="100%" height="100%"></iframe>\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\formula-4\formula-4.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_screenshot__["a" /* Screenshot */]])
     ], Formula_4Page);
     return Formula_4Page;
 }());
@@ -2006,15 +2287,15 @@ var Formula_4Page = (function () {
 
 /***/ }),
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2170,25 +2451,25 @@ var LocationPage = (function () {
 
 /***/ }),
 
-/***/ 59:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__location_location__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__location_location__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2540,18 +2821,18 @@ var MapPage = (function () {
 
 /***/ }),
 
-/***/ 60:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__register_register__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__register_register__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2651,5 +2932,5 @@ var WelcomePage = (function () {
 
 /***/ })
 
-},[221]);
+},[222]);
 //# sourceMappingURL=main.js.map

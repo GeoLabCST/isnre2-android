@@ -36,6 +36,13 @@ export class DssPage {
   public measure: boolean;
   public mapOtp: any;
 
+  public circle: boolean;
+  public drawControl: any;
+  public drawnItems: any;
+
+  public state: any;
+  public info: boolean;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -75,11 +82,12 @@ export class DssPage {
   loadMap() {
     this.map = L.map('map-dss', {
       center: [13.00, 101.50],
-      zoom: 5,
+      zoom: 6,
       zoomControl: false,
       //measureControl: true,
       //layersControl: true
     })
+
 
     const roads = L.gridLayer.googleMutant({
       type: 'roadmap' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
@@ -93,18 +101,88 @@ export class DssPage {
       type: 'terrain' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
     });
 
+    const c28_foresttype = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c28_foresttype',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c29_nrf = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c29_nrf',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c30_nprk = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c30_nprk',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c32_wldsshp = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c32_wldsshp',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c33_nhw = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c33_nhw',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c31_fprk = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c31_fprk',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c02_province = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c02_province',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c03_district = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c03_district',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
+    const c04_subdistrict = L.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+      layers: 'isnre:c04_subdistrict',
+      format: 'image/png',
+      zIndex: 5,
+      transparent: true
+    });
+
     const baseLayers = {
       "แผนที่ถนน": roads,
       "แผนที่ภาพดาวเทียม": satellite,
-      "แผนที่ภูมิประเทศ": terrain,
+      "แผนที่ภูมิประเทศ": terrain.addTo(this.map),
     };
-    L.control.layers(baseLayers).addTo(this.map);
-    //set measure default
-    this.measure = false;
 
-    //get featureinfo
-    //this.map.on('click', this.showInfo);
-    this.map.on('click', (e) => { this.onMapClick(e) });
+    const overlayLayers = {
+      "เขตจังหวัด": c02_province.addTo(this.map),
+      "เขตอำเภอ": c03_district.addTo(this.map),
+      "เขตตำบล": c04_subdistrict,
+      "ขอบเขตชนิดของป่าไม้": c28_foresttype.addTo(this.map),
+      "ป่าสงวนแห่งชาติ": c29_nrf,
+      "อุทยานแห่งชาติ": c30_nprk,
+      "วนอุทยาน": c31_fprk,
+      "เขตรักษาพันธุ์สัตว์ป่า": c32_wldsshp,
+      "เขตห้ามล่าสัตว์ป่า": c33_nhw,
+    };
+
+    L.control.layers(baseLayers, overlayLayers).addTo(this.map);
   }
 
   locFn(locType, locCode, bbox) {
@@ -211,7 +289,7 @@ export class DssPage {
 
   addMeasure() {
     let options = {
-      position: 'topright',
+      position: 'topleft',
       primaryLengthUnit: 'meters',
       secondaryLengthUnit: 'kilometers',
       primaryAreaUnit: 'sqmeters',
@@ -232,11 +310,8 @@ export class DssPage {
     if (this.measure == false) {
       this.control = L.control.measure(options).addTo(this.map);
       this.measure = true;
-      //console.log(this.measure);
     } else {
-      //L.Control.remove()
       this.measure = false;
-      //console.log(this.measure);
       this.map.removeControl(this.control);
     }
   }
@@ -270,7 +345,6 @@ export class DssPage {
       this.alreadyTh = data.lyr_th;
       //load array layer to map
       this.lyrFn(this.alreadyLyr);
-
     });
   }
 
@@ -300,6 +374,16 @@ export class DssPage {
     }
   }
 
+  enableInfo() {
+    if (this.info == false) {
+      this.state = 'info';
+      this.info = true;
+    } else {
+      this.state = '';
+      this.info = false;
+    }
+  }
+
   showInfo(lat: number, lng: number) {
     //this.shareService.setUserData(e);
     const modalLeg: Modal = this.modalCtrl.create('InfoPage', {
@@ -313,6 +397,39 @@ export class DssPage {
 
   showBuffer() {
     console.log('buffer')
+    this.drawnItems = L.featureGroup().addTo(this.map);
+
+    let options = {
+      position: 'topleft',
+      draw: {
+        polyline: false,
+        polygon: false,
+        circle: true,
+        rectangle: false,
+        marker: false,
+        circlemarker: false
+      },
+      edit: {
+        featureGroup: this.drawnItems,
+        remove: true
+      }
+    };
+
+    if (this.circle == false) {
+      // this.circleControl = L.control.measure(options).addTo(this.map);
+      this.drawControl = new L.Control.Draw(options);
+      this.map.addControl(this.drawControl);
+      this.circle = true;
+
+      this.map.on(L.Draw.Event.CREATED, (e) => {
+        const layer = e.layer;
+        this.drawnItems.addLayer(layer);
+      });
+    } else {
+      //L.Control.remove()
+      this.circle = false;
+      this.map.removeControl(this.drawControl);
+    }
   }
 
 }

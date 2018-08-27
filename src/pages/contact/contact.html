@@ -1,28 +1,125 @@
-<ion-header  id="isnre-font">
-  <ion-navbar>
-    <ion-title>Profile</ion-title>
+<ion-header id="isnre-font">
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      ข้อมูลส่วนตัว
+    </ion-title>
   </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="puppies">
+        โปรไฟล์
+      </ion-segment-button>
+      <ion-segment-button value="kittens">
+        สถิติการใช้งาน
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
- 
+
+
 <ion-content padding default-background>
-<ion-card  >
+  <ion-card>
+    <div [ngSwitch]="pet">
+      <!-- <ion-list *ngSwitchCase="'puppies'">
+        <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">
+        <ion-item>
+          <ion-icon name="contact" item-start large></ion-icon>
+          <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>
+          <p>เบอร์โทร : {{usrData.tel_user}}</p>
+        </ion-item>
 
-  <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">
+        <ion-item>
+          <ion-icon name="pin" item-left large></ion-icon>
+          <p>จังหวัด : {{usrData.prov_user}}</p>
+          <p>อำเภอ : {{usrData.amp_user}}</p>
+          <p>ตำบล : {{usrData.tam_user}}</p>
+        </ion-item>
+      </ion-list> -->
+
+      <ion-list *ngSwitchCase="'kittens'">
+        <ion-list-header>
+          จำนวนที่เข้าใช้งานทั้งหมด {{res2.length}} ครั้ง
+        </ion-list-header>
+        <ion-list *ngFor="let item of res2">
+          <ion-item> เวลาเข้าใช้งาน {{item.date_acces}} </ion-item>
+        </ion-list>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'puppies'">
+        <ion-list>
+          <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">
+          <!-- <ion-item>
+            <ion-icon name="contact" item-start large></ion-icon>
+            <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>
+            <p>เบอร์โทร : {{usrData.tel_user}}</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="pin" item-left large></ion-icon>
+            <p>จังหวัด : {{usrData.prov_user}}</p>
+            <p>อำเภอ : {{usrData.amp_user}}</p>
+            <p>ตำบล : {{usrData.tam_user}}</p>
+          </ion-item> -->
+
+          <form novalidate [formGroup]="reportForm">
+            <ion-item>
+              <ion-label>ชื่อ</ion-label>
+              <ion-input type="text" formControlName="name_user" value="{{usrData.name_user}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>นามสกุล</ion-label>
+              <ion-input type="text" formControlName="lname_user" value="{{usrData.lname_user}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>เบอร์โทร</ion-label>
+              <ion-input type="text" formControlName="tel_user" value="{{usrData.tel_user}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>จังหวัด</ion-label>
+              <ion-input type="text" formControlName="prov_user" value="{{usrData.prov_user}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>อำเภอ</ion-label>
+              <ion-input type="text" formControlName="amp_user" value="{{usrData.amp_user}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>ตำบล</ion-label>
+              <ion-input type="text" formControlName="tam_user" value="{{usrData.tam_user}}"></ion-input>
+            </ion-item>
+
+            <ion-list-header>
+              การเข้าใช้งานระบบ
+            </ion-list-header>
+
+            <ion-item>
+              <ion-label>Email</ion-label>
+              <ion-input type="text" formControlName="email_user" value="{{usrData.email_user}}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Password</ion-label>
+              <ion-input type="text" formControlName="pass_user" value="{{usrData.pass_user}}"></ion-input>
+            </ion-item>
+
+          </form>
+
+        </ion-list>
+
+        <div padding>
+          <button ion-button full (click)="updatestu()">บันทึกข้อมูล</button>
+        </div>
+      </ion-list>
+
+    </div>
 
 
-  <ion-item>
-    <ion-icon name="contact" item-start large></ion-icon>
-    <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>
-    <p>เบอร์โทร : {{usrData.tel_user}}</p>
-  </ion-item>
 
-  <ion-item>
-    <ion-icon name="pin" item-left large ></ion-icon>
-    <p>จังหวัด : {{usrData.prov_user}}</p>
-    <p>อำเภอ : {{usrData.amp_user}}</p>
-    <p>ตำบล : {{usrData.tam_user}}</p>
-  </ion-item>
-
-    
-</ion-card>
+  </ion-card>
 </ion-content>

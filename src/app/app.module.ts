@@ -31,6 +31,7 @@ import { ShareService } from '../providers/service/share';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartDescPage } from '../pages/chart-desc/chart-desc';
+import { Screenshot } from '@ionic-native/screenshot';
 // import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
@@ -82,6 +83,7 @@ import { ChartDescPage } from '../pages/chart-desc/chart-desc';
   ],
   providers: [
     StatusBar,
+    Screenshot,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ShareService,

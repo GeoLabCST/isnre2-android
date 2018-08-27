@@ -27,6 +27,9 @@
     },
     "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.geolab.isnre"
+    },
+    "com.darktalker.cordova.screenshot": {
+      "PACKAGE_NAME": "com.geolab.isnre"
     }
   },
   "dependent_plugins": {

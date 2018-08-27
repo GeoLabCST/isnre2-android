@@ -52945,6 +52945,12 @@ page-about button[ion-fab] ion-label {
   border-radius: 4px;
 }
 
+page-about img {
+  border: 5px solid #365454;
+  width: 70%;
+  margin-top: 3em;
+}
+
 page-contact [default-background] {
   background-image: url("http://119.59.125.189/images_isnre/bg005.jpg");
   background-color: white;
@@ -53026,6 +53032,12 @@ page-formula-1 .fab {
   contain: layout;
 }
 
+page-formula-1 img {
+  border: 5px solid #365454;
+  width: 70%;
+  margin-top: 3em;
+}
+
 page-formula-1 button[ion-fab] {
   overflow: visible;
   position: relative;
@@ -53044,6 +53056,12 @@ page-formula-1 button[ion-fab] ion-label {
 
 page-formula-2 .fab {
   contain: layout;
+}
+
+page-formula-2 img {
+  border: 5px solid #365454;
+  width: 70%;
+  margin-top: 3em;
 }
 
 page-formula-2 button[ion-fab] {
@@ -53066,6 +53084,12 @@ page-formula-3 .fab {
   contain: layout;
 }
 
+page-formula-3 img {
+  border: 5px solid #365454;
+  width: 70%;
+  margin-top: 3em;
+}
+
 page-formula-3 button[ion-fab] {
   overflow: visible;
   position: relative;
@@ -53084,6 +53108,12 @@ page-formula-3 button[ion-fab] ion-label {
 
 page-formula-4 .fab {
   contain: layout;
+}
+
+page-formula-4 img {
+  border: 5px solid #365454;
+  width: 70%;
+  margin-top: 3em;
 }
 
 page-formula-4 button[ion-fab] {

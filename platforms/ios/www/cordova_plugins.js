@@ -285,6 +285,14 @@ module.exports = [
       "cordova.plugins.Keyboard"
     ],
     "runs": true
+  },
+  {
+    "id": "com.darktalker.cordova.screenshot.screenshot",
+    "file": "plugins/com.darktalker.cordova.screenshot/www/Screenshot.js",
+    "pluginId": "com.darktalker.cordova.screenshot",
+    "merges": [
+      "navigator.screenshot"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -298,7 +306,8 @@ module.exports.metadata =
   "cordova-plugin-ionic-webview": "1.1.15",
   "cordova-plugin-splashscreen": "4.0.3",
   "cordova-plugin-whitelist": "1.3.1",
-  "ionic-plugin-keyboard": "2.2.1"
+  "ionic-plugin-keyboard": "2.2.1",
+  "com.darktalker.cordova.screenshot": "0.1.5"
 };
 // BOTTOM OF METADATA
 });

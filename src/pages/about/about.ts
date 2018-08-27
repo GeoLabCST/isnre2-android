@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Screenshot } from '@ionic-native/screenshot';
 
 /**
  * Generated class for the AboutPage page.
@@ -18,25 +19,43 @@ import { Formula_4Page } from '../formula-4/formula-4';
   templateUrl: 'about.html',
 })
 export class AboutPage {
+  screen: any;
+  state: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private screenshot: Screenshot) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AboutPage');
   }
 
+  reset() {
+    var self = this;
+    setTimeout(function () {
+      self.state = false;
+    }, 1000);
+  }
 
-    Formula1(){
+
+  screenShot() {
+    this.screenshot.save('jpg', 80).then(res => {
+      this.screen = res.filePath;
+      this.state = true;
+      this.reset();
+    });
+  }
+
+
+  Formula1() {
     this.navCtrl.push(Formula_1Page);
   }
-    Formula2(){
+  Formula2() {
     this.navCtrl.push(Formula_2Page);
   }
-    Formula3(){
+  Formula3() {
     this.navCtrl.push(Formula_3Page);
   }
-    Formula4(){
+  Formula4() {
     this.navCtrl.push(Formula_4Page);
   }
 

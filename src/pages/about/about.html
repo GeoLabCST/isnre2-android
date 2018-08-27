@@ -1,10 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>การนำขยะไปแปรรูป</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="screenShot()">
+        <ion-icon name="print"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
+
+  <img src="{{ screen }}" *ngIf="state">
+
   <ion-fab right bottom>
     <button ion-fab color="danger">
       <ion-icon name="arrow-dropup"></ion-icon>

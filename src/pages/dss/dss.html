@@ -21,10 +21,10 @@
         <ion-icon name="search" color="green"></ion-icon>
         <ion-label>ค้นหา</ion-label>
       </button>
-      <button ion-fab (click)="addLayer()">
+      <!-- <button ion-fab (click)="addLayer()">
         <ion-icon name="logo-buffer" color="green"></ion-icon>
         <ion-label>ชั้นข้อมูล</ion-label>
-      </button>
+      </button> -->
       <button ion-fab (click)="addLegend()">
         <ion-icon name="bowtie" color="green"></ion-icon>
         <ion-label>สัญลักษณ์</ion-label>
@@ -40,6 +40,10 @@
       <button ion-fab (click)="addData()">
         <ion-icon name="pin" color="red"></ion-icon>
         <ion-label>เพิ่มข้อมูล</ion-label>
+      </button>
+      <button ion-fab (click)="enableInfo()">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Popup info</ion-label>
       </button>
 
     </ion-fab-list>
