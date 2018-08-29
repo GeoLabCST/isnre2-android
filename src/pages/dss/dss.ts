@@ -5,10 +5,12 @@ import { HttpClient } from '@angular/common/http';
 import { Geolocation } from '@ionic-native/geolocation';
 import L from 'leaflet';
 import 'leaflet-measure/dist/leaflet-measure';
-import 'leaflet.gridlayer.googlemutant'
+import 'leaflet.gridlayer.googlemutant';
+import 'leaflet-draw/dist/leaflet.draw';
 import { ShareService } from '../../providers/service/share';
 
 import { LocationPage } from '../location/location';
+
 
 @IonicPage()
 @Component({
@@ -183,6 +185,21 @@ export class DssPage {
     };
 
     L.control.layers(baseLayers, overlayLayers).addTo(this.map);
+    //set measure default
+    this.measure = false;
+    this.circle = false;
+    this.info = false;
+
+    //get featureinfo
+    //this.map.on('click', this.showInfo);
+    this.map.on('click', (e) => {
+      // 
+      if (this.state == 'info') {
+        this.onMapClick(e)
+      } else if (this.state == 'buffer') {
+        this.showBuffer();
+      }
+    });
   }
 
   locFn(locType, locCode, bbox) {
@@ -430,6 +447,10 @@ export class DssPage {
       this.circle = false;
       this.map.removeControl(this.drawControl);
     }
+  }
+
+  reload() {
+    window.location.reload();
   }
 
 }

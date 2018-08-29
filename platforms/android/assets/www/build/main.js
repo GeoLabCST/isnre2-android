@@ -69,154 +69,11 @@ var ChartDescPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the ContactPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ContactPage = (function () {
-    function ContactPage(navCtrl, navParams, fb, http, alertCtrl, loadingCtrl, shareService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.fb = fb;
-        this.http = http;
-        this.alertCtrl = alertCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.shareService = shareService;
-        this.pet = "puppies";
-        // Receiving data via Service
-        this.usrData = this.shareService.getUserData();
-        console.log(this.usrData);
-        //console.log(this.pos.lng);
-        this.reportForm = fb.group({
-            'name_user': this.name_user,
-            'lname_user': this.lname_user,
-            'tel_user': this.tel_user,
-            'prov_user': this.prov_user,
-            'amp_user': this.amp_user,
-            'tam_user': this.tam_user,
-            'email_user': this.email_user,
-            'pass_user': this.pass_user
-        });
-    }
-    ContactPage.prototype.updatestu = function () {
-        var _this = this;
-        var loader = this.loadingCtrl.create({ content: "กำลังบันทึกข้อมูล.." });
-        var data = JSON.stringify({
-            'name_user': this.reportForm.controls['name_user'].value,
-            'lname_user': this.reportForm.controls['lname_user'].value,
-            'tel_user': this.reportForm.controls['tel_user'].value,
-            'prov_user': this.reportForm.controls['prov_user'].value,
-            'amp_user': this.reportForm.controls['amp_user'].value,
-            'tam_user': this.reportForm.controls['tam_user'].value,
-            'email_user': this.reportForm.controls['email_user'].value,
-            'pass_user': this.reportForm.controls['pass_user'].value,
-            'id': '8'
-        });
-        console.log(data);
-        loader.present();
-        //http://localhost/isnre/php_app/update_profile.php
-        this.http.post('http://119.59.125.189/isnre2/php_app/update_profile.php', data)
-            .subscribe(function (res) {
-            _this.res = res;
-            if (_this.res.message == 'error') {
-                loader.dismiss();
-                var alert_1 = _this.alertCtrl.create({
-                    title: 'ไม่สามารถบันทึกข้อมูลได้',
-                    subTitle: 'กรุณาลองอีกครั้ง',
-                    buttons: ['ok']
-                });
-                alert_1.present();
-            }
-            else if (_this.res.message == 'success') {
-                loader.dismiss();
-                var alert_2 = _this.alertCtrl.create({
-                    title: 'แก้ไขข้อมูลเรียบร้อยแล้ว',
-                    subTitle: '',
-                    buttons: ['ok']
-                });
-                _this.shareService.setUserData(_this.res);
-                alert_2.present();
-            }
-            else {
-                loader.dismiss();
-                var alert_3 = _this.alertCtrl.create({
-                    title: 'ไม่สามารถบันทึกข้อมูลได้',
-                    subTitle: 'กรุณาลองอีกครั้ง',
-                    buttons: ['ok']
-                });
-                alert_3.present();
-            }
-        }, function (error) {
-            console.log("Oooops!");
-            loader.dismiss();
-        });
-    };
-    ContactPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        var id_user = this.shareService.usrData.id_user;
-        var data2 = JSON.stringify({
-            'id_user': id_user
-        });
-        //http://119.59.125.189/isnre2/php_app/view_stat.php
-        var loader = this.loadingCtrl.create({ content: "...Loading" });
-        loader.present();
-        this.http.post("http://119.59.125.189/isnre2/php_app/view_stat.php", data2)
-            .subscribe(function (res2) {
-            _this.res2 = res2;
-            console.log(res2);
-            loader.dismiss();
-        });
-    };
-    ContactPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contact',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/'<ion-header id="isnre-font">\n\n  <ion-navbar no-border-bottom>\n\n    <ion-title>\n\n      ข้อมูลส่วนตัว\n\n    </ion-title>\n\n  </ion-navbar>\n\n\n\n  <ion-toolbar no-border-top>\n\n    <ion-segment [(ngModel)]="pet">\n\n      <ion-segment-button value="puppies">\n\n        โปรไฟล์\n\n      </ion-segment-button>\n\n      <ion-segment-button value="kittens">\n\n        สถิติการใช้งาน\n\n      </ion-segment-button>\n\n\n\n    </ion-segment>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding default-background>\n\n  <ion-card>\n\n    <div [ngSwitch]="pet">\n\n      <!-- <ion-list *ngSwitchCase="\'puppies\'">\n\n        <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n        <ion-item>\n\n          <ion-icon name="contact" item-start large></ion-icon>\n\n          <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n          <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-icon name="pin" item-left large></ion-icon>\n\n          <p>จังหวัด : {{usrData.prov_user}}</p>\n\n          <p>อำเภอ : {{usrData.amp_user}}</p>\n\n          <p>ตำบล : {{usrData.tam_user}}</p>\n\n        </ion-item>\n\n      </ion-list> -->\n\n\n\n      <ion-list *ngSwitchCase="\'kittens\'">\n\n        <ion-list-header>\n\n          จำนวนที่เข้าใช้งานทั้งหมด {{res2.length}} ครั้ง\n\n        </ion-list-header>\n\n        <ion-list *ngFor="let item of res2">\n\n          <ion-item> เวลาเข้าใช้งาน {{item.date_acces}} </ion-item>\n\n        </ion-list>\n\n      </ion-list>\n\n\n\n      <ion-list *ngSwitchCase="\'puppies\'">\n\n        <ion-list>\n\n          <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n          <!-- <ion-item>\n\n            <ion-icon name="contact" item-start large></ion-icon>\n\n            <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n            <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n          </ion-item>\n\n\n\n          <ion-item>\n\n            <ion-icon name="pin" item-left large></ion-icon>\n\n            <p>จังหวัด : {{usrData.prov_user}}</p>\n\n            <p>อำเภอ : {{usrData.amp_user}}</p>\n\n            <p>ตำบล : {{usrData.tam_user}}</p>\n\n          </ion-item> -->\n\n\n\n          <form novalidate [formGroup]="reportForm">\n\n            <ion-item>\n\n              <ion-label>ชื่อ</ion-label>\n\n              <ion-input type="text" formControlName="name_user" value="{{usrData.name_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>นามสกุล</ion-label>\n\n              <ion-input type="text" formControlName="lname_user" value="{{usrData.lname_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>เบอร์โทร</ion-label>\n\n              <ion-input type="text" formControlName="tel_user" value="{{usrData.tel_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>จังหวัด</ion-label>\n\n              <ion-input type="text" formControlName="prov_user" value="{{usrData.prov_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>อำเภอ</ion-label>\n\n              <ion-input type="text" formControlName="amp_user" value="{{usrData.amp_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>ตำบล</ion-label>\n\n              <ion-input type="text" formControlName="tam_user" value="{{usrData.tam_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-list-header>\n\n              การเข้าใช้งานระบบ\n\n            </ion-list-header>\n\n\n\n            <ion-item>\n\n              <ion-label>Email</ion-label>\n\n              <ion-input type="text" formControlName="email_user" value="{{usrData.email_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>Password</ion-label>\n\n              <ion-input type="text" formControlName="pass_user" value="{{usrData.pass_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n          </form>\n\n\n\n        </ion-list>\n\n\n\n        <div padding>\n\n          <button ion-button full (click)="updatestu()">บันทึกข้อมูล</button>\n\n        </div>\n\n      </ion-list>\n\n\n\n    </div>\n\n\n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_service_share__["a" /* ShareService */]])
-    ], ContactPage);
-    return ContactPage;
-}());
-
-//# sourceMappingURL=contact.js.map
-
-/***/ }),
-
-/***/ 120:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_highcharts__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_desc_chart_desc__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -425,6 +282,149 @@ var ChartPage = (function () {
 
 /***/ }),
 
+/***/ 120:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_service_share__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ContactPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ContactPage = (function () {
+    function ContactPage(navCtrl, navParams, fb, http, alertCtrl, loadingCtrl, shareService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.fb = fb;
+        this.http = http;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.shareService = shareService;
+        this.pet = "puppies";
+        // Receiving data via Service
+        this.usrData = this.shareService.getUserData();
+        console.log(this.usrData);
+        //console.log(this.pos.lng);
+        this.reportForm = fb.group({
+            'name_user': this.name_user,
+            'lname_user': this.lname_user,
+            'tel_user': this.tel_user,
+            'prov_user': this.prov_user,
+            'amp_user': this.amp_user,
+            'tam_user': this.tam_user,
+            'email_user': this.email_user,
+            'pass_user': this.pass_user
+        });
+    }
+    ContactPage.prototype.updatestu = function () {
+        var _this = this;
+        var loader = this.loadingCtrl.create({ content: "กำลังบันทึกข้อมูล.." });
+        var data = JSON.stringify({
+            'name_user': this.reportForm.controls['name_user'].value,
+            'lname_user': this.reportForm.controls['lname_user'].value,
+            'tel_user': this.reportForm.controls['tel_user'].value,
+            'prov_user': this.reportForm.controls['prov_user'].value,
+            'amp_user': this.reportForm.controls['amp_user'].value,
+            'tam_user': this.reportForm.controls['tam_user'].value,
+            'email_user': this.reportForm.controls['email_user'].value,
+            'pass_user': this.reportForm.controls['pass_user'].value,
+            'id': '8'
+        });
+        console.log(data);
+        loader.present();
+        //http://localhost/isnre/php_app/update_profile.php
+        this.http.post('http://119.59.125.189/isnre2/php_app/update_profile.php', data)
+            .subscribe(function (res) {
+            _this.res = res;
+            if (_this.res.message == 'error') {
+                loader.dismiss();
+                var alert_1 = _this.alertCtrl.create({
+                    title: 'ไม่สามารถบันทึกข้อมูลได้',
+                    subTitle: 'กรุณาลองอีกครั้ง',
+                    buttons: ['ok']
+                });
+                alert_1.present();
+            }
+            else if (_this.res.message == 'success') {
+                loader.dismiss();
+                var alert_2 = _this.alertCtrl.create({
+                    title: 'แก้ไขข้อมูลเรียบร้อยแล้ว',
+                    subTitle: '',
+                    buttons: ['ok']
+                });
+                _this.shareService.setUserData(_this.res);
+                alert_2.present();
+            }
+            else {
+                loader.dismiss();
+                var alert_3 = _this.alertCtrl.create({
+                    title: 'ไม่สามารถบันทึกข้อมูลได้',
+                    subTitle: 'กรุณาลองอีกครั้ง',
+                    buttons: ['ok']
+                });
+                alert_3.present();
+            }
+        }, function (error) {
+            console.log("Oooops!");
+            loader.dismiss();
+        });
+    };
+    ContactPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        var id_user = this.shareService.usrData.id_user;
+        var data2 = JSON.stringify({
+            'id_user': id_user
+        });
+        //http://119.59.125.189/isnre2/php_app/view_stat.php
+        var loader = this.loadingCtrl.create({ content: "...Loading" });
+        loader.present();
+        this.http.post("http://119.59.125.189/isnre2/php_app/view_stat.php", data2)
+            .subscribe(function (res2) {
+            _this.res2 = res2;
+            console.log(res2);
+            loader.dismiss();
+        });
+    };
+    ContactPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-contact',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/'<ion-header id="isnre-font">\n\n  <ion-navbar no-border-bottom>\n\n    <ion-title>\n\n      ข้อมูลส่วนตัว\n\n    </ion-title>\n\n  </ion-navbar>\n\n\n\n  <ion-toolbar no-border-top>\n\n    <ion-segment [(ngModel)]="pet">\n\n      <ion-segment-button value="puppies">\n\n        โปรไฟล์\n\n      </ion-segment-button>\n\n      <ion-segment-button value="kittens">\n\n        สถิติการใช้งาน\n\n      </ion-segment-button>\n\n\n\n    </ion-segment>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding default-background>\n\n  <ion-card>\n\n    <div [ngSwitch]="pet">\n\n      <!-- <ion-list *ngSwitchCase="\'puppies\'">\n\n        <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n        <ion-item>\n\n          <ion-icon name="contact" item-start large></ion-icon>\n\n          <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n          <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n          <ion-icon name="pin" item-left large></ion-icon>\n\n          <p>จังหวัด : {{usrData.prov_user}}</p>\n\n          <p>อำเภอ : {{usrData.amp_user}}</p>\n\n          <p>ตำบล : {{usrData.tam_user}}</p>\n\n        </ion-item>\n\n      </ion-list> -->\n\n\n\n      <ion-list *ngSwitchCase="\'kittens\'">\n\n        <ion-list-header>\n\n          จำนวนที่เข้าใช้งานทั้งหมด {{res2.length}} ครั้ง\n\n        </ion-list-header>\n\n        <ion-list *ngFor="let item of res2">\n\n          <ion-item> เวลาเข้าใช้งาน {{item.date_acces}} </ion-item>\n\n        </ion-list>\n\n      </ion-list>\n\n\n\n      <ion-list *ngSwitchCase="\'puppies\'">\n\n        <ion-list>\n\n          <img src="http://119.59.125.189/isnre2/img/pic_user/{{usrData.pic_user}}">\n\n          <!-- <ion-item>\n\n            <ion-icon name="contact" item-start large></ion-icon>\n\n            <h2>{{usrData.name_user}} {{usrData.lname_user}}</h2>\n\n            <p>เบอร์โทร : {{usrData.tel_user}}</p>\n\n          </ion-item>\n\n\n\n          <ion-item>\n\n            <ion-icon name="pin" item-left large></ion-icon>\n\n            <p>จังหวัด : {{usrData.prov_user}}</p>\n\n            <p>อำเภอ : {{usrData.amp_user}}</p>\n\n            <p>ตำบล : {{usrData.tam_user}}</p>\n\n          </ion-item> -->\n\n\n\n          <form novalidate [formGroup]="reportForm">\n\n            <ion-item>\n\n              <ion-label>ชื่อ</ion-label>\n\n              <ion-input type="text" formControlName="name_user" value="{{usrData.name_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>นามสกุล</ion-label>\n\n              <ion-input type="text" formControlName="lname_user" value="{{usrData.lname_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>เบอร์โทร</ion-label>\n\n              <ion-input type="text" formControlName="tel_user" value="{{usrData.tel_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>จังหวัด</ion-label>\n\n              <ion-input type="text" formControlName="prov_user" value="{{usrData.prov_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>อำเภอ</ion-label>\n\n              <ion-input type="text" formControlName="amp_user" value="{{usrData.amp_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>ตำบล</ion-label>\n\n              <ion-input type="text" formControlName="tam_user" value="{{usrData.tam_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-list-header>\n\n              การเข้าใช้งานระบบ\n\n            </ion-list-header>\n\n\n\n            <ion-item>\n\n              <ion-label>Email</ion-label>\n\n              <ion-input type="text" formControlName="email_user" value="{{usrData.email_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n            <ion-item>\n\n              <ion-label>Password</ion-label>\n\n              <ion-input type="text" formControlName="pass_user" value="{{usrData.pass_user}}"></ion-input>\n\n            </ion-item>\n\n\n\n          </form>\n\n\n\n        </ion-list>\n\n\n\n        <div padding>\n\n          <button ion-button full (click)="updatestu()">บันทึกข้อมูล</button>\n\n        </div>\n\n      </ion-list>\n\n\n\n    </div>\n\n\n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\contact\contact.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_service_share__["a" /* ShareService */]])
+    ], ContactPage);
+    return ContactPage;
+}());
+
+//# sourceMappingURL=contact.js.map
+
+/***/ }),
+
 /***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -440,8 +440,10 @@ var ChartPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__location_location__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_service_share__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__location_location__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -451,6 +453,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -500,7 +503,7 @@ var DssPage = (function () {
         var _this = this;
         this.map = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.map('map-dss', {
             center: [13.00, 101.50],
-            zoom: 5,
+            zoom: 6,
             zoomControl: false,
         });
         var roads = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.gridLayer.googleMutant({
@@ -512,17 +515,92 @@ var DssPage = (function () {
         var terrain = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.gridLayer.googleMutant({
             type: 'terrain' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
         });
+        var c28_foresttype = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c28_foresttype',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c29_nrf = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c29_nrf',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c30_nprk = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c30_nprk',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c32_wldsshp = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c32_wldsshp',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c33_nhw = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c33_nhw',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c31_fprk = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c31_fprk',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c02_province = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c02_province',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c03_district = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c03_district',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
+        var c04_subdistrict = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.tileLayer.wms("http://119.59.125.189/geoserver/ows?", {
+            layers: 'isnre:c04_subdistrict',
+            format: 'image/png',
+            zIndex: 5,
+            transparent: true
+        });
         var baseLayers = {
             "แผนที่ถนน": roads,
             "แผนที่ภาพดาวเทียม": satellite,
-            "แผนที่ภูมิประเทศ": terrain,
+            "แผนที่ภูมิประเทศ": terrain.addTo(this.map),
         };
-        __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.control.layers(baseLayers).addTo(this.map);
+        var overlayLayers = {
+            "เขตจังหวัด": c02_province.addTo(this.map),
+            "เขตอำเภอ": c03_district.addTo(this.map),
+            "เขตตำบล": c04_subdistrict,
+            "ขอบเขตชนิดของป่าไม้": c28_foresttype.addTo(this.map),
+            "ป่าสงวนแห่งชาติ": c29_nrf,
+            "อุทยานแห่งชาติ": c30_nprk,
+            "วนอุทยาน": c31_fprk,
+            "เขตรักษาพันธุ์สัตว์ป่า": c32_wldsshp,
+            "เขตห้ามล่าสัตว์ป่า": c33_nhw,
+        };
+        __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.control.layers(baseLayers, overlayLayers).addTo(this.map);
         //set measure default
         this.measure = false;
+        this.circle = false;
+        this.info = false;
         //get featureinfo
         //this.map.on('click', this.showInfo);
-        this.map.on('click', function (e) { _this.onMapClick(e); });
+        this.map.on('click', function (e) {
+            // 
+            if (_this.state == 'info') {
+                _this.onMapClick(e);
+            }
+            else if (_this.state == 'buffer') {
+                _this.showBuffer();
+            }
+        });
     };
     DssPage.prototype.locFn = function (locType, locCode, bbox) {
         if (locType == 'all') {
@@ -628,7 +706,7 @@ var DssPage = (function () {
     };
     DssPage.prototype.addMeasure = function () {
         var options = {
-            position: 'topright',
+            position: 'topleft',
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
             primaryAreaUnit: 'sqmeters',
@@ -648,12 +726,9 @@ var DssPage = (function () {
         if (this.measure == false) {
             this.control = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.control.measure(options).addTo(this.map);
             this.measure = true;
-            //console.log(this.measure);
         }
         else {
-            //L.Control.remove()
             this.measure = false;
-            //console.log(this.measure);
             this.map.removeControl(this.control);
         }
     };
@@ -671,7 +746,7 @@ var DssPage = (function () {
         });
     };
     DssPage.prototype.addSelectarea = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__location_location__["a" /* LocationPage */], {});
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__location_location__["a" /* LocationPage */], {});
     };
     DssPage.prototype.addLayer = function () {
         var _this = this;
@@ -713,6 +788,16 @@ var DssPage = (function () {
             //console.log(this.pos);
         }
     };
+    DssPage.prototype.enableInfo = function () {
+        if (this.info == false) {
+            this.state = 'info';
+            this.info = true;
+        }
+        else {
+            this.state = '';
+            this.info = false;
+        }
+    };
     DssPage.prototype.showInfo = function (lat, lng) {
         //this.shareService.setUserData(e);
         var modalLeg = this.modalCtrl.create('InfoPage', {
@@ -724,11 +809,46 @@ var DssPage = (function () {
         modalLeg.present();
     };
     DssPage.prototype.showBuffer = function () {
+        var _this = this;
         console.log('buffer');
+        this.drawnItems = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.featureGroup().addTo(this.map);
+        var options = {
+            position: 'topleft',
+            draw: {
+                polyline: false,
+                polygon: false,
+                circle: true,
+                rectangle: false,
+                marker: false,
+                circlemarker: false
+            },
+            edit: {
+                featureGroup: this.drawnItems,
+                remove: true
+            }
+        };
+        if (this.circle == false) {
+            // this.circleControl = L.control.measure(options).addTo(this.map);
+            this.drawControl = new __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Control.Draw(options);
+            this.map.addControl(this.drawControl);
+            this.circle = true;
+            this.map.on(__WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Draw.Event.CREATED, function (e) {
+                var layer = e.layer;
+                _this.drawnItems.addLayer(layer);
+            });
+        }
+        else {
+            //L.Control.remove()
+            this.circle = false;
+            this.map.removeControl(this.drawControl);
+        }
+    };
+    DssPage.prototype.reload = function () {
+        window.location.reload();
     };
     DssPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dss',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/'<ion-header>\n\n  <ion-navbar id="isnre-font">\n    <ion-title>สนับสนุนการตัดสินใจ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab right bottom>\n    <button ion-fab color="danger">\n      <ion-icon name="arrow-dropup"></ion-icon>\n    </button>\n    <ion-fab-list side="top">\n      <button ion-fab (click)="showBuffer()">\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n        <ion-label>buffering</ion-label>\n      </button>\n      <button ion-fab (click)="addSelectarea()">\n        <ion-icon name="search" color="green"></ion-icon>\n        <ion-label>ค้นหา</ion-label>\n      </button>\n      <button ion-fab (click)="addLayer()">\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n        <ion-label>ชั้นข้อมูล</ion-label>\n      </button>\n      <button ion-fab (click)="addLegend()">\n        <ion-icon name="bowtie" color="green"></ion-icon>\n        <ion-label>สัญลักษณ์</ion-label>\n      </button>\n      <button ion-fab (click)="addMeasure()">\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n        <ion-label>เครื่องมือวัด</ion-label>\n      </button>\n      <button ion-fab (click)="addLocation()">\n        <ion-icon name="locate" color="blue"></ion-icon>\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n      </button>\n      <button ion-fab (click)="addData()">\n        <ion-icon name="pin" color="red"></ion-icon>\n        <ion-label>เพิ่มข้อมูล</ion-label>\n      </button>\n\n    </ion-fab-list>\n  </ion-fab>\n  <div id="map-dss"></div>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/,
+            selector: 'page-dss',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/'<ion-header>\n\n  <ion-navbar id="isnre-font">\n    <ion-title>สนับสนุนการตัดสินใจ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab right bottom>\n    <button ion-fab color="danger">\n      <ion-icon name="arrow-dropup"></ion-icon>\n    </button>\n    <ion-fab-list side="top">\n      <button ion-fab (click)="showBuffer()">\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n        <ion-label>buffering</ion-label>\n      </button>\n      <button ion-fab (click)="addSelectarea()">\n        <ion-icon name="search" color="green"></ion-icon>\n        <ion-label>ค้นหา</ion-label>\n      </button>\n      <!-- <button ion-fab (click)="addLayer()">\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n        <ion-label>ชั้นข้อมูล</ion-label>\n      </button> -->\n      <button ion-fab (click)="addLegend()">\n        <ion-icon name="bowtie" color="green"></ion-icon>\n        <ion-label>สัญลักษณ์</ion-label>\n      </button>\n      <button ion-fab (click)="addMeasure()">\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n        <ion-label>เครื่องมือวัด</ion-label>\n      </button>\n      <button ion-fab (click)="addLocation()">\n        <ion-icon name="locate" color="blue"></ion-icon>\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n      </button>\n      <button ion-fab (click)="addData()">\n        <ion-icon name="pin" color="red"></ion-icon>\n        <ion-label>เพิ่มข้อมูล</ion-label>\n      </button>\n      <button ion-fab (click)="enableInfo()">\n        <ion-icon name="information-circle"></ion-icon>\n        <ion-label>Popup info</ion-label>\n      </button>\n\n    </ion-fab-list>\n  </ion-fab>\n  <div id="map-dss"></div>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -736,7 +856,7 @@ var DssPage = (function () {
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_service_share__["a" /* ShareService */]])
+            __WEBPACK_IMPORTED_MODULE_8__providers_service_share__["a" /* ShareService */]])
     ], DssPage);
     return DssPage;
 }());
@@ -1310,11 +1430,11 @@ var map = {
 		18
 	],
 	"../pages/chart/chart.module": [
-		306,
+		305,
 		17
 	],
 	"../pages/contact/contact.module": [
-		305,
+		306,
 		16
 	],
 	"../pages/dss/dss.module": [
@@ -1334,27 +1454,27 @@ var map = {
 		13
 	],
 	"../pages/formula-3/formula-3.module": [
-		311,
+		314,
 		12
 	],
 	"../pages/formula-4/formula-4.module": [
-		312,
+		311,
 		11
 	],
 	"../pages/home/home.module": [
-		313,
+		312,
 		10
 	],
 	"../pages/info/info.module": [
-		314,
+		316,
 		2
 	],
 	"../pages/layer/layer.module": [
-		315,
+		313,
 		1
 	],
 	"../pages/legend/legend.module": [
-		316,
+		315,
 		0
 	],
 	"../pages/location/location.module": [
@@ -1394,16 +1514,16 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 179:
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_chart__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_chart__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dss_dss__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1446,7 +1566,7 @@ var TabsPage = (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1491,13 +1611,13 @@ var OtherPage = (function () {
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(245);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1505,7 +1625,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1519,24 +1639,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_formula_1_formula_1__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_formula_2_formula_2__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_formula_3_formula_3__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_formula_4_formula_4__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_welcome_welcome__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_register_register__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_other_other__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_other_other__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_about_about__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_location_location__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chart_chart__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chart_chart__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_dss_dss__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_home_home__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_chart_desc_chart_desc__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1606,18 +1726,18 @@ var AppModule = (function () {
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-data/add-data.module#AddDataPageModule', name: 'AddDataPage', segment: 'add-data', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chart-desc/chart-desc.module#ChartDescPageModule', name: 'ChartDescPage', segment: 'chart-desc', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chart/chart.module#ChartPageModule', name: 'ChartPage', segment: 'chart', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dss/dss.module#DssPageModule', name: 'DssPage', segment: 'dss', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/forget/forget.module#ForgetPageModule', name: 'ForgetPage', segment: 'forget', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-1/formula-1.module#Formula_1PageModule', name: 'Formula_1Page', segment: 'formula-1', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-2/formula-2.module#Formula_2PageModule', name: 'Formula_2Page', segment: 'formula-2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/formula-3/formula-3.module#Formula_3PageModule', name: 'Formula_3Page', segment: 'formula-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-4/formula-4.module#Formula_4PageModule', name: 'Formula_4Page', segment: 'formula-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/layer/layer.module#LayerPageModule', name: 'LayerPage', segment: 'layer', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/formula-3/formula-3.module#Formula_3PageModule', name: 'Formula_3Page', segment: 'formula-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/legend/legend.module#LegendPageModule', name: 'LegendPage', segment: 'legend', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/location/location.module#LocationPageModule', name: 'LocationPage', segment: 'location', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/other/other.module#OtherPageModule', name: 'OtherPage', segment: 'other', priority: 'low', defaultHistory: [] },
@@ -1758,8 +1878,8 @@ var AboutPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2368,7 +2488,7 @@ var LocationPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_service_share__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__location_location__ = __webpack_require__(50);
@@ -2728,7 +2848,7 @@ var MapPage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
@@ -2834,5 +2954,5 @@ var WelcomePage = (function () {
 
 /***/ })
 
-},[222]);
+},[223]);
 //# sourceMappingURL=main.js.map
