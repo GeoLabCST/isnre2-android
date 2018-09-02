@@ -6,7 +6,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import L from 'leaflet';
 import 'leaflet-measure/dist/leaflet-measure';
 import 'leaflet.gridlayer.googlemutant';
-import 'leaflet-draw/dist/leaflet.draw';
+// import 'leaflet-draw/dist/leaflet.draw';
 import { ShareService } from '../../providers/service/share';
 
 import { LocationPage } from '../location/location';
@@ -413,40 +413,16 @@ export class DssPage {
   }
 
   showBuffer() {
-    console.log('buffer')
-    this.drawnItems = L.featureGroup().addTo(this.map);
-
-    let options = {
-      position: 'topleft',
-      draw: {
-        polyline: false,
-        polygon: false,
-        circle: true,
-        rectangle: false,
-        marker: false,
-        circlemarker: false
-      },
-      edit: {
-        featureGroup: this.drawnItems,
-        remove: true
-      }
-    };
-
-    if (this.circle == false) {
-      // this.circleControl = L.control.measure(options).addTo(this.map);
-      this.drawControl = new L.Control.Draw(options);
-      this.map.addControl(this.drawControl);
-      this.circle = true;
-
-      this.map.on(L.Draw.Event.CREATED, (e) => {
-        const layer = e.layer;
-        this.drawnItems.addLayer(layer);
-      });
-    } else {
-      //L.Control.remove()
-      this.circle = false;
-      this.map.removeControl(this.drawControl);
-    }
+    const modelLyr: Modal = this.modalCtrl.create('BufferPage', {
+      alreadyLyr: this.alreadyLyr,
+      alreadyTh: this.alreadyTh
+    });
+    modelLyr.present();
+    modelLyr.onDidDismiss((data) => {
+      this.alreadyLyr = data.lyr_ls;
+      this.alreadyTh = data.lyr_th;
+      this.lyrFn(this.alreadyLyr);
+    });
   }
 
   reload() {

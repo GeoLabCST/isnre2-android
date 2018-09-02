@@ -32,6 +32,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartDescPage } from '../pages/chart-desc/chart-desc';
 import { Screenshot } from '@ionic-native/screenshot';
+// import { LayerPage } from '../pages/layer/layer';
+// import { BufferPage } from '../pages/buffer/buffer';
 // import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
@@ -45,6 +47,8 @@ import { Screenshot } from '@ionic-native/screenshot';
     WelcomePage,
     LocationPage,
     MapPage,
+    // LayerPage,
+    // BufferPage,
     Formula_1Page,
     Formula_2Page,
     Formula_3Page,
@@ -72,6 +76,8 @@ import { Screenshot } from '@ionic-native/screenshot';
     WelcomePage,
     LocationPage,
     MapPage,
+    // LayerPage,
+    // BufferPage,
     Formula_1Page,
     Formula_2Page,
     Formula_3Page,

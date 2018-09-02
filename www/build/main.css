@@ -52951,6 +52951,10 @@ page-about img {
   margin-top: 3em;
 }
 
+page-buffer .data {
+  height: 80%;
+}
+
 page-contact [default-background] {
   background-image: url("http://119.59.125.189/images_isnre/bg005.jpg");
   background-color: white;

@@ -1,6 +1,6 @@
-webpackJsonp([20],{
+webpackJsonp([21],{
 
-/***/ 118:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65,7 +65,7 @@ var ChartDescPage = (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73,9 +73,9 @@ var ChartDescPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_highcharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_highcharts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_desc_chart_desc__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_desc_chart_desc__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -440,10 +440,8 @@ var ContactPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__location_location__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_service_share__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__location_location__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -460,7 +458,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+// import 'leaflet-draw/dist/leaflet.draw';
 
 
 var DssPage = (function () {
@@ -746,7 +744,7 @@ var DssPage = (function () {
         });
     };
     DssPage.prototype.addSelectarea = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__location_location__["a" /* LocationPage */], {});
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__location_location__["a" /* LocationPage */], {});
     };
     DssPage.prototype.addLayer = function () {
         var _this = this;
@@ -810,45 +808,23 @@ var DssPage = (function () {
     };
     DssPage.prototype.showBuffer = function () {
         var _this = this;
-        console.log('buffer');
-        this.drawnItems = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.featureGroup().addTo(this.map);
-        var options = {
-            position: 'topleft',
-            draw: {
-                polyline: false,
-                polygon: false,
-                circle: true,
-                rectangle: false,
-                marker: false,
-                circlemarker: false
-            },
-            edit: {
-                featureGroup: this.drawnItems,
-                remove: true
-            }
-        };
-        if (this.circle == false) {
-            // this.circleControl = L.control.measure(options).addTo(this.map);
-            this.drawControl = new __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Control.Draw(options);
-            this.map.addControl(this.drawControl);
-            this.circle = true;
-            this.map.on(__WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Draw.Event.CREATED, function (e) {
-                var layer = e.layer;
-                _this.drawnItems.addLayer(layer);
-            });
-        }
-        else {
-            //L.Control.remove()
-            this.circle = false;
-            this.map.removeControl(this.drawControl);
-        }
+        var modelLyr = this.modalCtrl.create('BufferPage', {
+            alreadyLyr: this.alreadyLyr,
+            alreadyTh: this.alreadyTh
+        });
+        modelLyr.present();
+        modelLyr.onDidDismiss(function (data) {
+            _this.alreadyLyr = data.lyr_ls;
+            _this.alreadyTh = data.lyr_th;
+            _this.lyrFn(_this.alreadyLyr);
+        });
     };
     DssPage.prototype.reload = function () {
         window.location.reload();
     };
     DssPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dss',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/'<ion-header>\n\n  <ion-navbar id="isnre-font">\n    <ion-title>สนับสนุนการตัดสินใจ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab right bottom>\n    <button ion-fab color="danger">\n      <ion-icon name="arrow-dropup"></ion-icon>\n    </button>\n    <ion-fab-list side="top">\n      <button ion-fab (click)="showBuffer()">\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n        <ion-label>buffering</ion-label>\n      </button>\n      <button ion-fab (click)="addSelectarea()">\n        <ion-icon name="search" color="green"></ion-icon>\n        <ion-label>ค้นหา</ion-label>\n      </button>\n      <!-- <button ion-fab (click)="addLayer()">\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n        <ion-label>ชั้นข้อมูล</ion-label>\n      </button> -->\n      <button ion-fab (click)="addLegend()">\n        <ion-icon name="bowtie" color="green"></ion-icon>\n        <ion-label>สัญลักษณ์</ion-label>\n      </button>\n      <button ion-fab (click)="addMeasure()">\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n        <ion-label>เครื่องมือวัด</ion-label>\n      </button>\n      <button ion-fab (click)="addLocation()">\n        <ion-icon name="locate" color="blue"></ion-icon>\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n      </button>\n      <button ion-fab (click)="addData()">\n        <ion-icon name="pin" color="red"></ion-icon>\n        <ion-label>เพิ่มข้อมูล</ion-label>\n      </button>\n      <button ion-fab (click)="enableInfo()">\n        <ion-icon name="information-circle"></ion-icon>\n        <ion-label>Popup info</ion-label>\n      </button>\n\n    </ion-fab-list>\n  </ion-fab>\n  <div id="map-dss"></div>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/,
+            selector: 'page-dss',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/'<ion-header>\n\n  <ion-navbar id="isnre-font">\n    <ion-title>สนับสนุนการตัดสินใจ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab right bottom>\n    <button ion-fab color="danger">\n      <ion-icon name="arrow-dropup"></ion-icon>\n    </button>\n    <ion-fab-list side="top">\n      <button ion-fab (click)="showBuffer()">\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n        <ion-label>buffer</ion-label>\n      </button>\n      <button ion-fab (click)="addSelectarea()">\n        <ion-icon name="search" color="green"></ion-icon>\n        <ion-label>ค้นหา</ion-label>\n      </button>\n      <!-- <button ion-fab (click)="addLayer()">\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n        <ion-label>ชั้นข้อมูล</ion-label>\n      </button> -->\n      <button ion-fab (click)="addLegend()">\n        <ion-icon name="bowtie" color="green"></ion-icon>\n        <ion-label>สัญลักษณ์</ion-label>\n      </button>\n      <button ion-fab (click)="addMeasure()">\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n        <ion-label>เครื่องมือวัด</ion-label>\n      </button>\n      <button ion-fab (click)="addLocation()">\n        <ion-icon name="locate" color="blue"></ion-icon>\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n      </button>\n      <button ion-fab (click)="addData()">\n        <ion-icon name="pin" color="red"></ion-icon>\n        <ion-label>เพิ่มข้อมูล</ion-label>\n      </button>\n      <button ion-fab (click)="enableInfo()">\n        <ion-icon name="information-circle"></ion-icon>\n        <ion-label>Popup info</ion-label>\n      </button>\n\n    </ion-fab-list>\n  </ion-fab>\n  <div id="map-dss"></div>\n</ion-content>\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\dss\dss.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -856,7 +832,7 @@ var DssPage = (function () {
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_8__providers_service_share__["a" /* ShareService */]])
+            __WEBPACK_IMPORTED_MODULE_7__providers_service_share__["a" /* ShareService */]])
     ], DssPage);
     return DssPage;
 }());
@@ -1180,10 +1156,10 @@ var HomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__welcome_welcome__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1418,84 +1394,88 @@ webpackEmptyAsyncContext.id = 135;
 
 var map = {
 	"../pages/about/about.module": [
-		302,
-		19
+		301,
+		20
 	],
 	"../pages/add-data/add-data.module": [
-		303,
+		305,
+		5
+	],
+	"../pages/buffer/buffer.module": [
+		302,
 		4
 	],
 	"../pages/chart-desc/chart-desc.module": [
+		303,
+		19
+	],
+	"../pages/chart/chart.module": [
 		304,
 		18
 	],
-	"../pages/chart/chart.module": [
-		305,
-		17
-	],
 	"../pages/contact/contact.module": [
 		306,
-		16
+		17
 	],
 	"../pages/dss/dss.module": [
 		307,
-		15
+		16
 	],
 	"../pages/forget/forget.module": [
-		308,
+		309,
 		3
 	],
 	"../pages/formula-1/formula-1.module": [
-		309,
-		14
+		308,
+		15
 	],
 	"../pages/formula-2/formula-2.module": [
 		310,
-		13
+		14
 	],
 	"../pages/formula-3/formula-3.module": [
-		314,
-		12
+		311,
+		13
 	],
 	"../pages/formula-4/formula-4.module": [
-		311,
-		11
+		312,
+		12
 	],
 	"../pages/home/home.module": [
-		312,
-		10
+		313,
+		11
 	],
 	"../pages/info/info.module": [
-		316,
+		314,
 		2
 	],
 	"../pages/layer/layer.module": [
-		313,
+		315,
 		1
 	],
 	"../pages/legend/legend.module": [
-		315,
+		316,
 		0
 	],
 	"../pages/location/location.module": [
 		317,
-		9
+		10
 	],
 	"../pages/map/map.module": [
+		319,
+		9
+	],
+	"../pages/other/other.module": [
 		318,
 		8
 	],
-	"../pages/other/other.module": [
-		319,
-		7
-	],
 	"../pages/register/register.module": [
 		320,
-		6
+		7
 	],
 	"../pages/welcome/welcome.module": [
 		321,
-		5
+		6
 	]
 };
 function webpackAsyncContext(req) {
@@ -1514,7 +1494,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 180:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1523,7 +1503,7 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_about__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contact_contact__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_chart__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_chart__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dss_dss__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1566,7 +1546,7 @@ var TabsPage = (function () {
 
 /***/ }),
 
-/***/ 222:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1611,13 +1591,13 @@ var OtherPage = (function () {
 
 /***/ }),
 
-/***/ 223:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(244);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1625,7 +1605,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 245:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1634,30 +1614,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_formula_1_formula_1__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_formula_2_formula_2__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_formula_3_formula_3__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_formula_4_formula_4__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_welcome_welcome__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_register_register__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_other_other__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_other_other__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_about_about__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_contact_contact__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_location_location__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chart_chart__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_chart_chart__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_dss_dss__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_home_home__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_chart_desc_chart_desc__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_chart_desc_chart_desc__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__ionic_native_screenshot__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1694,6 +1674,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { LayerPage } from '../pages/layer/layer';
+// import { BufferPage } from '../pages/buffer/buffer';
 // import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 var AppModule = (function () {
     function AppModule() {
@@ -1710,6 +1692,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_welcome_welcome__["a" /* WelcomePage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_location_location__["a" /* LocationPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_map_map__["a" /* MapPage */],
+                // LayerPage,
+                // BufferPage,
                 __WEBPACK_IMPORTED_MODULE_10__pages_formula_1_formula_1__["a" /* Formula_1Page */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_formula_2_formula_2__["a" /* Formula_2Page */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_formula_3_formula_3__["a" /* Formula_3Page */],
@@ -1724,23 +1708,24 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/add-data/add-data.module#AddDataPageModule', name: 'AddDataPage', segment: 'add-data', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buffer/buffer.module#BufferPageModule', name: 'BufferPage', segment: 'buffer', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chart-desc/chart-desc.module#ChartDescPageModule', name: 'ChartDescPage', segment: 'chart-desc', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chart/chart.module#ChartPageModule', name: 'ChartPage', segment: 'chart', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/add-data/add-data.module#AddDataPageModule', name: 'AddDataPage', segment: 'add-data', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dss/dss.module#DssPageModule', name: 'DssPage', segment: 'dss', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/forget/forget.module#ForgetPageModule', name: 'ForgetPage', segment: 'forget', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-1/formula-1.module#Formula_1PageModule', name: 'Formula_1Page', segment: 'formula-1', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/forget/forget.module#ForgetPageModule', name: 'ForgetPage', segment: 'forget', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-2/formula-2.module#Formula_2PageModule', name: 'Formula_2Page', segment: 'formula-2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/formula-3/formula-3.module#Formula_3PageModule', name: 'Formula_3Page', segment: 'formula-3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formula-4/formula-4.module#Formula_4PageModule', name: 'Formula_4Page', segment: 'formula-4', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/layer/layer.module#LayerPageModule', name: 'LayerPage', segment: 'layer', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/formula-3/formula-3.module#Formula_3PageModule', name: 'Formula_3Page', segment: 'formula-3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/legend/legend.module#LegendPageModule', name: 'LegendPage', segment: 'legend', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/layer/layer.module#LayerPageModule', name: 'LayerPage', segment: 'layer', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/legend/legend.module#LegendPageModule', name: 'LegendPage', segment: 'legend', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/location/location.module#LocationPageModule', name: 'LocationPage', segment: 'location', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/other/other.module#OtherPageModule', name: 'OtherPage', segment: 'other', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
                     ]
@@ -1760,6 +1745,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_welcome_welcome__["a" /* WelcomePage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_location_location__["a" /* LocationPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_map_map__["a" /* MapPage */],
+                // LayerPage,
+                // BufferPage,
                 __WEBPACK_IMPORTED_MODULE_10__pages_formula_1_formula_1__["a" /* Formula_1Page */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_formula_2_formula_2__["a" /* Formula_2Page */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_formula_3_formula_3__["a" /* Formula_3Page */],
@@ -1871,15 +1858,15 @@ var AboutPage = (function () {
 
 /***/ }),
 
-/***/ 301:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2488,10 +2475,8 @@ var LocationPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_leaflet_measure_dist_leaflet_measure__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet_gridlayer_googlemutant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_leaflet_draw_dist_leaflet_draw__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_service_share__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__location_location__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_service_share__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__location_location__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2508,7 +2493,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+// import 'leaflet-draw/dist/leaflet.draw';
 
 
 var MapPage = (function () {
@@ -2729,7 +2714,7 @@ var MapPage = (function () {
         });
     };
     MapPage.prototype.addSelectarea = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_9__location_location__["a" /* LocationPage */], {});
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__location_location__["a" /* LocationPage */], {});
     };
     MapPage.prototype.addLayer = function () {
         var _this = this;
@@ -2793,48 +2778,26 @@ var MapPage = (function () {
     };
     MapPage.prototype.showBuffer = function () {
         var _this = this;
-        console.log('buffer');
-        this.drawnItems = __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.featureGroup().addTo(this.map);
-        var options = {
-            position: 'topleft',
-            draw: {
-                polyline: false,
-                polygon: false,
-                circle: true,
-                rectangle: false,
-                marker: false,
-                circlemarker: false
-            },
-            edit: {
-                featureGroup: this.drawnItems,
-                remove: true
-            }
-        };
-        if (this.circle == false) {
-            // this.circleControl = L.control.measure(options).addTo(this.map);
-            this.drawControl = new __WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Control.Draw(options);
-            this.map.addControl(this.drawControl);
-            this.circle = true;
-            this.map.on(__WEBPACK_IMPORTED_MODULE_4_leaflet___default.a.Draw.Event.CREATED, function (e) {
-                var layer = e.layer;
-                _this.drawnItems.addLayer(layer);
-            });
-        }
-        else {
-            //L.Control.remove()
-            this.circle = false;
-            this.map.removeControl(this.drawControl);
-        }
+        var modelLyr = this.modalCtrl.create('BufferPage', {
+            alreadyLyr: this.alreadyLyr,
+            alreadyTh: this.alreadyTh
+        });
+        modelLyr.present();
+        modelLyr.onDidDismiss(function (data) {
+            _this.alreadyLyr = data.lyr_ls;
+            _this.alreadyTh = data.lyr_th;
+            _this.lyrFn(_this.alreadyLyr);
+        });
     };
     MapPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({ selector: 'page-map',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\map\map.html"*/'<ion-header>\n\n\n\n  <ion-navbar id="isnre-font">\n\n    <ion-title>แผนที่</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content id="isnre-font">\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab (click)="showBuffer()">\n\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n\n        <ion-label>buffering</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addSelectarea()">\n\n        <ion-icon name="search" color="green"></ion-icon>\n\n        <ion-label>ค้นหา</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addLayer()">\n\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n\n        <ion-label>ชั้นข้อมูล</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addLegend()">\n\n        <ion-icon name="bowtie" color="green"></ion-icon>\n\n        <ion-label>สัญลักษณ์</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addMeasure()">\n\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n\n        <ion-label>เครื่องมือวัด</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addLocation()">\n\n        <ion-icon name="locate" color="blue"></ion-icon>\n\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addData()">\n\n        <ion-icon name="pin" color="red"></ion-icon>\n\n        <ion-label>เพิ่มข้อมูล</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="enableInfo()">\n\n        <ion-icon name="information-circle"></ion-icon>\n\n        <ion-label>Popup info</ion-label>\n\n      </button>\n\n\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n  <div id="map"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\map\map.html"*/ }),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({ selector: 'page-map',template:/*ion-inline-start:"C:\_dev_prod\isnre2-android\src\pages\map\map.html"*/'<ion-header>\n\n\n\n  <ion-navbar id="isnre-font">\n\n    <ion-title>แผนที่</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content id="isnre-font">\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="danger">\n\n      <ion-icon name="arrow-dropup"></ion-icon>\n\n    </button>\n\n    <ion-fab-list side="top">\n\n      <button ion-fab (click)="showBuffer()">\n\n        <ion-icon name="radio-button-off" color="red"></ion-icon>\n\n        <ion-label>buffer</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addSelectarea()">\n\n        <ion-icon name="search" color="green"></ion-icon>\n\n        <ion-label>ค้นหา</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addLayer()">\n\n        <ion-icon name="logo-buffer" color="green"></ion-icon>\n\n        <ion-label>ชั้นข้อมูล</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addLegend()">\n\n        <ion-icon name="bowtie" color="green"></ion-icon>\n\n        <ion-label>สัญลักษณ์</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addMeasure()">\n\n        <ion-icon name="git-pull-request" color="green"></ion-icon>\n\n        <ion-label>เครื่องมือวัด</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addLocation()">\n\n        <ion-icon name="locate" color="blue"></ion-icon>\n\n        <ion-label>ตำแหน่งปัจจุบัน</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="addData()">\n\n        <ion-icon name="pin" color="red"></ion-icon>\n\n        <ion-label>เพิ่มข้อมูล</ion-label>\n\n      </button>\n\n      <button ion-fab (click)="enableInfo()">\n\n        <ion-icon name="information-circle"></ion-icon>\n\n        <ion-label>Popup info</ion-label>\n\n      </button>\n\n\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n  <div id="map"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\_dev_prod\isnre2-android\src\pages\map\map.html"*/ }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_8__providers_service_share__["a" /* ShareService */]])
+            __WEBPACK_IMPORTED_MODULE_7__providers_service_share__["a" /* ShareService */]])
     ], MapPage);
     return MapPage;
 }());
@@ -2848,7 +2811,7 @@ var MapPage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
@@ -2954,5 +2917,5 @@ var WelcomePage = (function () {
 
 /***/ })
 
-},[223]);
+},[222]);
 //# sourceMappingURL=main.js.map

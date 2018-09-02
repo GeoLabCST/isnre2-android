@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "com.darktalker.cordova.screenshot": {
+      "PACKAGE_NAME": "com.geolab.isnre"
+    },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.geolab.isnre"
     },
@@ -26,9 +29,6 @@
       "PACKAGE_NAME": "com.geolab.isnre"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.geolab.isnre"
-    },
-    "com.darktalker.cordova.screenshot": {
       "PACKAGE_NAME": "com.geolab.isnre"
     }
   },

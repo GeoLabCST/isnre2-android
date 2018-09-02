@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
-
-//import { MapPage } from '../map/map';
-
-
 
 @IonicPage()
 @Component({
@@ -13,23 +8,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LayerPage {
 
-  public alreadyLyr:any;
-  public alreadyTh:any;
-  public lyrs: any;  
-  //public lyr: any;  
-  public lyr_ls=[];  
-  public lyr_th=[];
+  public alreadyLyr: any;
+  public alreadyTh: any;
+  public lyrs: any;
+  public lyr_ls = [];
+  public lyr_th = [];
 
- 
+
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public viewCtrl: ViewController,
-    public navParams: NavParams,
-    public http: HttpClient
+    public navParams: NavParams
   ) {
     this.alreadyLyr = navParams.get('alreadyLyr');
     this.alreadyTh = navParams.get('alreadyTh');
-    this.initLyr();    
+    this.initLyr();
     //this.lyr_old = navParams.get('lyr')
   }
 
@@ -37,9 +30,9 @@ export class LayerPage {
     //console.log('ionViewDidLoad LayerPage');
   }
 
-  initLyr() {   
+  initLyr() {
 
-    this.lyrs=[{
+    this.lyrs = [{
       "id": "1",
       "lyr": "c01_region",
       "lyr_desc": "เขตภาค ",
@@ -423,17 +416,17 @@ export class LayerPage {
       "lyr_desc": "โป่งดิน โป่งน้ำ โป่งเทียม ",
       "checked": []
     }
-  ]
+    ]
 
     //show already layers
     //console.log(this.alreadyLyr);
     //set already layer to checked
-    for (let l in this.lyrs){
-      for(let a in this.alreadyLyr){
-        if(this.lyrs[l].lyr==this.alreadyLyr[a]){
+    for (let l in this.lyrs) {
+      for (let a in this.alreadyLyr) {
+        if (this.lyrs[l].lyr == this.alreadyLyr[a]) {
           this.lyrs[l]['checked'].push(1);
         }
-      }     
+      }
     }
     //console.log(this.lyrs);
     //init lyr_ls array layers
@@ -441,34 +434,34 @@ export class LayerPage {
     //console.log(this.lyr_ls);    
   }
 
-  initLyrArr(){
+  initLyrArr() {
     //load alreadyLyr to array
-    for(let l in this.alreadyLyr){
+    for (let l in this.alreadyLyr) {
       this.lyr_ls.push(this.alreadyLyr[l]);
     }
     //load lyr_ls to array
-    for(let t in this.alreadyTh){
+    for (let t in this.alreadyTh) {
       this.lyr_th.push(this.alreadyTh[t]);
     }
   }
-  
+
   onChange(lyr, lyr_th, isChecked, index) {
-    
-    if(isChecked) {
-     this.lyr_ls.push(lyr);
-     this.lyr_th.push(lyr_th);
+
+    if (isChecked) {
+      this.lyr_ls.push(lyr);
+      this.lyr_th.push(lyr_th);
     } else {
-      this.lyr_ls.splice(this.lyr_ls.indexOf(lyr),1)
-      this.lyr_th.splice(this.lyr_th.indexOf(lyr_th),1)
+      this.lyr_ls.splice(this.lyr_ls.indexOf(lyr), 1)
+      this.lyr_th.splice(this.lyr_th.indexOf(lyr_th), 1)
     }
     //console.log(this.lyr_ls);
   }
 
-  lyrSelected(){
+  lyrSelected() {
     const data = {
-      lyr_ls : this.lyr_ls,
-      lyr_th : this.lyr_th
-    }    
+      lyr_ls: this.lyr_ls,
+      lyr_th: this.lyr_th
+    }
     this.viewCtrl.dismiss(data);
   }
 
